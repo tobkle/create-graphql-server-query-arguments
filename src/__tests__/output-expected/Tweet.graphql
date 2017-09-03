@@ -1,0 +1,120 @@
+type Tweet {
+  id: ObjID!
+  author: User
+  coauthors(lastCreatedAt: Float, limit: Int): [User]
+  body: String
+  likers(lastCreatedAt: Float, limit: Int): [User]
+  createdBy: User
+  updatedBy: User
+  createdAt: Float!
+  updatedAt: Float!
+}
+
+extend type Query {
+  tweets(lastCreatedAt: Float, limit: Int, filter: TweetFilter, orderBy: [TweetOrderBy!]): [Tweet!]
+  tweet(id: ObjID!): Tweet
+}
+
+input CreateTweetInput {
+  authorId: ObjID
+  coauthorsIds: [ObjID]
+  body: String
+  likersIds: [ObjID]
+}
+
+input UpdateTweetInput {
+  coauthorsIds: [ObjID]
+  body: String
+  likersIds: [ObjID]
+}
+
+extend type Mutation {
+  createTweet(input: CreateTweetInput!): Tweet
+  updateTweet(id: ObjID!, input: UpdateTweetInput!): Tweet
+  removeTweet(id: ObjID!): Boolean
+}
+
+extend type Subscription {
+  tweetCreated: Tweet
+  tweetUpdated: Tweet
+  tweetRemoved: ObjID
+}
+
+input TweetFilter {
+  AND: [TweetFilter!]
+  NOR: [TweetFilter!]
+  OR: [TweetFilter!]
+  id: ObjID
+  id_eq: ObjID
+  id_ne: ObjID
+  id_all: [ObjID!]
+  id_in: [ObjID!]
+  id_nin: [ObjID!]
+  id_not_in: [ObjID!]
+  id_exists: Boolean
+  id_type: BSONType
+  body: String
+  body_lt: String
+  body_lte: String
+  body_gt: String
+  body_gte: String
+  body_eq: String
+  body_ne: String
+  body_all: [String!]
+  body_in: [String!]
+  body_nin: [String!]
+  body_not_in: [String!]
+  body_exists: Boolean
+  body_type: BSONType
+  body_regex: Regex
+  body_contains: String
+  body_starts_with: String
+  body_ends_with: String
+  body_not_contains: String
+  body_not_starts_with: String
+  body_not_ends_with: String
+  body_contains_ci: String
+  body_starts_with_ci: String
+  body_ends_with_ci: String
+  body_not_contains_ci: String
+  body_not_starts_with_ci: String
+  body_not_ends_with_ci: String
+  createdAt: Float
+  createdAt_lt: Float
+  createdAt_lte: Float
+  createdAt_gt: Float
+  createdAt_gte: Float
+  createdAt_eq: Float
+  createdAt_ne: Float
+  createdAt_all: [Float!]
+  createdAt_in: [Float!]
+  createdAt_nin: [Float!]
+  createdAt_not_in: [Float!]
+  createdAt_exists: Boolean
+  createdAt_type: BSONType
+  updatedAt: Float
+  updatedAt_lt: Float
+  updatedAt_lte: Float
+  updatedAt_gt: Float
+  updatedAt_gte: Float
+  updatedAt_eq: Float
+  updatedAt_ne: Float
+  updatedAt_all: [Float!]
+  updatedAt_in: [Float!]
+  updatedAt_nin: [Float!]
+  updatedAt_not_in: [Float!]
+  updatedAt_exists: Boolean
+  updatedAt_type: BSONType
+}
+
+enum TweetSort {
+  id
+  body
+  createdAt
+  updatedAt
+}
+
+input TweetOrderBy {
+  sort: TweetSort!
+  direction: Direction = ASC
+}

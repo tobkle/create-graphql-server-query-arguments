@@ -1,0 +1,228 @@
+type User {
+  id: ObjID!
+  role: String
+  email: String!
+  username: String
+  bio: String
+  notify: Boolean
+  tweets(minLikes: Int, lastCreatedAt: Float, limit: Int): [Tweet]
+  liked(lastCreatedAt: Float, limit: Int): [Tweet]
+  following(lastCreatedAt: Float, limit: Int): [User]
+  followers(lastCreatedAt: Float, limit: Int): [User]
+  createdBy: User
+  updatedBy: User
+  createdAt: Float!
+  updatedAt: Float!
+}
+
+extend type Query {
+  users(lastCreatedAt: Float, limit: Int, filter: UserFilter, orderBy: [UserOrderBy!]): [User!]
+  user(id: ObjID!): User
+}
+
+input CreateUserInput {
+  role: String
+  email: String!
+  username: String
+  bio: String
+  notify: Boolean
+  tweetsIds: [ObjID]
+  likedIds: [ObjID]
+  followingIds: [ObjID]
+  followersIds: [ObjID]
+  password: String!
+}
+
+input UpdateUserInput {
+  role: String
+  email: String
+  username: String
+  bio: String
+  notify: Boolean
+  tweetsIds: [ObjID]
+  likedIds: [ObjID]
+  followingIds: [ObjID]
+  followersIds: [ObjID]
+}
+
+extend type Mutation {
+  createUser(input: CreateUserInput!): User
+  updateUser(id: ObjID!, input: UpdateUserInput!): User
+  removeUser(id: ObjID!): Boolean
+}
+
+extend type Subscription {
+  userCreated: User
+  userUpdated: User
+  userRemoved: ObjID
+}
+
+input UserFilter {
+  AND: [UserFilter!]
+  NOR: [UserFilter!]
+  OR: [UserFilter!]
+  id: ObjID
+  id_eq: ObjID
+  id_ne: ObjID
+  id_all: [ObjID!]
+  id_in: [ObjID!]
+  id_nin: [ObjID!]
+  id_not_in: [ObjID!]
+  id_exists: Boolean
+  id_type: BSONType
+  role: String
+  role_lt: String
+  role_lte: String
+  role_gt: String
+  role_gte: String
+  role_eq: String
+  role_ne: String
+  role_all: [String!]
+  role_in: [String!]
+  role_nin: [String!]
+  role_not_in: [String!]
+  role_exists: Boolean
+  role_type: BSONType
+  role_regex: Regex
+  role_contains: String
+  role_starts_with: String
+  role_ends_with: String
+  role_not_contains: String
+  role_not_starts_with: String
+  role_not_ends_with: String
+  role_contains_ci: String
+  role_starts_with_ci: String
+  role_ends_with_ci: String
+  role_not_contains_ci: String
+  role_not_starts_with_ci: String
+  role_not_ends_with_ci: String
+  email: String
+  email_lt: String
+  email_lte: String
+  email_gt: String
+  email_gte: String
+  email_eq: String
+  email_ne: String
+  email_all: [String!]
+  email_in: [String!]
+  email_nin: [String!]
+  email_not_in: [String!]
+  email_exists: Boolean
+  email_type: BSONType
+  email_regex: Regex
+  email_contains: String
+  email_starts_with: String
+  email_ends_with: String
+  email_not_contains: String
+  email_not_starts_with: String
+  email_not_ends_with: String
+  email_contains_ci: String
+  email_starts_with_ci: String
+  email_ends_with_ci: String
+  email_not_contains_ci: String
+  email_not_starts_with_ci: String
+  email_not_ends_with_ci: String
+  username: String
+  username_lt: String
+  username_lte: String
+  username_gt: String
+  username_gte: String
+  username_eq: String
+  username_ne: String
+  username_all: [String!]
+  username_in: [String!]
+  username_nin: [String!]
+  username_not_in: [String!]
+  username_exists: Boolean
+  username_type: BSONType
+  username_regex: Regex
+  username_contains: String
+  username_starts_with: String
+  username_ends_with: String
+  username_not_contains: String
+  username_not_starts_with: String
+  username_not_ends_with: String
+  username_contains_ci: String
+  username_starts_with_ci: String
+  username_ends_with_ci: String
+  username_not_contains_ci: String
+  username_not_starts_with_ci: String
+  username_not_ends_with_ci: String
+  bio: String
+  bio_lt: String
+  bio_lte: String
+  bio_gt: String
+  bio_gte: String
+  bio_eq: String
+  bio_ne: String
+  bio_all: [String!]
+  bio_in: [String!]
+  bio_nin: [String!]
+  bio_not_in: [String!]
+  bio_exists: Boolean
+  bio_type: BSONType
+  bio_regex: Regex
+  bio_contains: String
+  bio_starts_with: String
+  bio_ends_with: String
+  bio_not_contains: String
+  bio_not_starts_with: String
+  bio_not_ends_with: String
+  bio_contains_ci: String
+  bio_starts_with_ci: String
+  bio_ends_with_ci: String
+  bio_not_contains_ci: String
+  bio_not_starts_with_ci: String
+  bio_not_ends_with_ci: String
+  notify: Boolean
+  notify_eq: Boolean
+  notify_ne: Boolean
+  notify_all: [Boolean!]
+  notify_in: [Boolean!]
+  notify_nin: [Boolean!]
+  notify_not_in: [Boolean!]
+  notify_exists: Boolean
+  notify_type: BSONType
+  createdAt: Float
+  createdAt_lt: Float
+  createdAt_lte: Float
+  createdAt_gt: Float
+  createdAt_gte: Float
+  createdAt_eq: Float
+  createdAt_ne: Float
+  createdAt_all: [Float!]
+  createdAt_in: [Float!]
+  createdAt_nin: [Float!]
+  createdAt_not_in: [Float!]
+  createdAt_exists: Boolean
+  createdAt_type: BSONType
+  updatedAt: Float
+  updatedAt_lt: Float
+  updatedAt_lte: Float
+  updatedAt_gt: Float
+  updatedAt_gte: Float
+  updatedAt_eq: Float
+  updatedAt_ne: Float
+  updatedAt_all: [Float!]
+  updatedAt_in: [Float!]
+  updatedAt_nin: [Float!]
+  updatedAt_not_in: [Float!]
+  updatedAt_exists: Boolean
+  updatedAt_type: BSONType
+}
+
+enum UserSort {
+  id
+  role
+  email
+  username
+  bio
+  notify
+  createdAt
+  updatedAt
+}
+
+input UserOrderBy {
+  sort: UserSort!
+  direction: Direction = ASC
+}

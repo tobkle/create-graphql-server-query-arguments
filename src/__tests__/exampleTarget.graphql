@@ -1,0 +1,95 @@
+input TweetOrderBy {
+  sort: TweetSort!
+  direction: Direction! = ASC
+}
+
+enum TweetSort { 
+  id
+  author
+  body
+  createdBy
+  updatedBy
+  createdAt
+  updatedAt
+ }
+
+ input TweetFilter {
+  
+   # 1 
+   id: ObjID
+   AND: [TweetFilter!]
+   NOR: [TweetFilter!] 
+   OR: [TweetFilter!]
+   NOT: [TweetFilter!] or object?
+
+   # 2
+   id_all: [ObjID!]
+   id_ne: ObjID
+   id_in: [ObjID!]
+   id_nin: [ObjID!]
+   id_lt: ObjID
+   id_lte: ObjID
+   id_gt: ObjID
+   id_gte: ObjID
+   id_exists: Boolean
+   id_type: BSONType
+   id_contains: String
+   id_starts_with: String
+   id_ends_with: String
+   id_not_contains: String
+   id_not_starts_with: String
+   id_not_ends_with: String
+   id_not_in: [ObjID!]
+   id_regex: Regex
+   contains_ci: String
+   starts_with_ci: String
+   ends_with_ci: String
+   not_contains_ci: String
+   not_starts_with_ci: String
+   not_ends_with_ci: String
+
+   body: String
+   body_not: String
+   body_in: [String!]
+   body_not_in: [String!]
+   body_lt: String
+   body_lte: String
+   body_gt: String
+   body_gte: String
+   body_contains: String
+   body_not_contains: String
+   body_starts_with: String
+   body_not_starts_with: String
+   body_ends_with: String
+   body_not_ends_with: String
+
+   createdAt: Float
+   createdAt_not: Float
+   createdAt_in: [Float!]
+   createdAt_not_in: [Float!]
+   createdAt_lt: Float
+   createdAt_lte: Float
+   createdAt_gt: Float
+   createdAt_gte: Float
+   createdAt_contains: Float
+   createdAt_not_contains: Float
+   createdAt_starts_with: Float
+   createdAt_not_starts_with: Float
+   createdAt_ends_with: Float
+   createdAt_not_ends_with: Float
+
+   updatedAt: Float
+   updatedAt_not: Float
+   updatedAt_in: [Float!]
+   updatedAt_not_in: [Float!]
+   updatedAt_lt: Float
+   updatedAt_lte: Float
+   updatedAt_gt: Float
+   updatedAt_gte: Float
+   updatedAt_contains: Float
+   updatedAt_not_contains: Float
+   updatedAt_starts_with: Float
+   updatedAt_not_starts_with: Float
+   updatedAt_ends_with: Float
+   updatedAt_not_ends_with: Float
+ }

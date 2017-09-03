@@ -34,11 +34,12 @@
     "gitpublish": ". ./resources/gitpublish.sh",
     "prettier": "node_modules/.bin/prettier src/**/**/*.js --write",
     "esdoc": "node_modules/.bin/esdoc -c .esdoc.json",
-    "debug": "babel-node --inspect src/lib/buildQuery.js",
-    "nodemon": "nodemon -L --watch src src/lib/buildQuery.js --exec babel-node"
+    "debug": "babel-node --inspect src/__tests__/debug",
+    "nodemon": "nodemon -L --watch src src/__tests__/debug --exec babel-node --inspect"
   },
   "homepage": "https://github.com/tobkle/create-graphql-server-query-arguments#readme",
   "devDependencies": {
+    "assert": "^1.4.1",
     "babel-cli": "6.24.1",
     "babel-eslint": "7.2.3",
     "babel-plugin-syntax-async-functions": "6.13.0",
@@ -52,8 +53,10 @@
     "chai-fs": "^1.0.0",
     "chai-json-equal": "0.0.1",
     "chai-spies-next": "^0.8.0",
+    "chai-string": "^1.4.0",
     "chai-subset": "1.5.0",
     "coveralls": "^2.13.1",
+    "create-graphql-server-authorization": "^0.0.42",
     "cross-env": "^5.0.5",
     "dataloader": "^1.3.0",
     "esdoc": "^1.0.1",
@@ -77,13 +80,14 @@
     "sane": "2.0.0"
   },
   "dependencies": {
-    "chai-string": "^1.4.0",
     "global": "^4.3.2",
-    "graphql": "^0.11.1",
+    "graphql": "^0.11.2",
     "iterall": "^1.1.0",
     "lodash": "4.16.4",
     "lodash.clonedeep": "^4.5.0",
     "lodash.includes": "^4.3.0",
+    "lodash.isarraylike": "^4.2.0",
+    "lodash.isobject": "^3.0.2",
     "lodash.merge": "^4.6.0",
     "mongodb": "^2.2.31"
   }
