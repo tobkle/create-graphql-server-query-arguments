@@ -1,6 +1,7 @@
 // @flow
 import isArrayLike from 'lodash.isarraylike';
 import isObject from 'lodash.isobject';
+
 /*
  * build a query for the type model accessing mongodb
  * @public
@@ -24,6 +25,12 @@ export function buildFilterQuery(args: any): any {
       return args;
     case 'function':
       return args;
+    case 'object':
+      // only on "ObjectID"s, we don't go deeper into this Object
+      // other "objects" will be handled below
+      if (args._bsontype && args._bsontype === 'ObjectID') {
+        return args;
+      }
   }
 
   // on array like types, return the interpreted mapped values.
@@ -49,7 +56,12 @@ export function buildFilterQuery(args: any): any {
       const length = 0 + keyParts.length;
 
       // the fieldName is then e.g. "bodyText", get the first array element
-      const fieldName = keyParts.shift();
+      let fieldName = keyParts.shift();
+
+      // our "id" field is in mongo "_id"
+      if (fieldName === 'id') {
+        fieldName = '_id';
+      }
 
       // the operation is then: e.g. "not_starts_with"
       const operation = keyParts.join('_');
@@ -71,15 +83,6 @@ export function buildFilterQuery(args: any): any {
               // in the array.
               //     $and   : [ { tags: "ssl" }, { tags: "security" } ]
               query['$and'] = buildFilterQuery(value);
-              break;
-
-            case 'NOT':
-              // $not performs a logical NOT operation on the specified
-              //  <operator-expression> and selects the documents that
-              // do not match the <operator-expression>.
-              // This includes documents that do not contain the field.
-              // db.inventory.find( { price: { $not: { $gt: 1.99 } } } )
-              query['$not'] = buildFilterQuery(value);
               break;
 
             case 'NOR':
@@ -181,6 +184,22 @@ export function buildFilterQuery(args: any): any {
               // e.g. value.
               // db.inventory.find( { qty: { $gte: 20 } } )
               query[fieldName] = { $gte: buildFilterQuery(value) };
+              break;
+
+            case 'not':
+              // $not performs a logical NOT operation on the specified
+              //  <operator-expression> and selects the documents that
+              // do not match the <operator-expression>.
+              // This includes documents that do not contain the field.
+              // db.inventory.find( { price: { $not: { $gt: 1.99 } } } )
+
+              const subQuery = buildFilterQuery(value);
+              if (subQuery[fieldName]) {
+                query[fieldName] = { $not: subQuery[fieldName] };
+              } else {
+                // this shouldn't happen, but for safety reasons
+                query[fieldName] = { $not: buildFilterQuery(value) };
+              }
               break;
 
             case 'exists':

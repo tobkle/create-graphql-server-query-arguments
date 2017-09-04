@@ -137,7 +137,7 @@ function getFilterInputFields(fieldTypes, TypeName) {
   // prepare "filter" query argument fields for scalar types
   return fieldTypes
     .filter(field => field.scalar)
-    .map(field => prepareArgument(field))
+    .map(field => prepareArgument(field, TypeName))
     .reduce((array, field) => array.concat(field), [
       { [`AND`]: `[${TypeName}Filter!]` },
       { [`NOR`]: `[${TypeName}Filter!]` },
@@ -266,6 +266,9 @@ function addQueryArguments(enhancedSchema, queryArguments) {
             const queryArgument = queryArguments[field.name.value];
             // if we have arguments to add for this type e.g. 'users'
             if (queryArgument && field.name.kind === NAME && args) {
+              // add "skip" query argument
+              args.push(buildArgument('skip', 'Int'));
+
               // add "filter" query argument
               args.push(buildArgument('filter', queryArgument.filterName));
 
@@ -287,7 +290,7 @@ function addQueryArguments(enhancedSchema, queryArguments) {
  * @return {array} argumentFields - map of arguments and their types
  */
 
-function prepareArgument({ name, type }) {
+function prepareArgument({ name, type }, TypeName) {
   switch (type) {
     case STRING:
     case ENUM:
@@ -299,6 +302,7 @@ function prepareArgument({ name, type }) {
         { [`${name}_gte`]: type },
         { [`${name}_eq`]: type },
         { [`${name}_ne`]: type },
+        { [`${name}_not`]: `${TypeName}Filter` },
         { [`${name}_all`]: `[${type}!]` },
         { [`${name}_in`]: `[${type}!]` },
         { [`${name}_nin`]: `[${type}!]` },

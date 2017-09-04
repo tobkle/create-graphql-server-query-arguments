@@ -59,7 +59,7 @@ A skip argument is added, to skip a number of found records, not to be returned 
 
 ### filter
 The following filter query arguments are added to list types, which you can use to build complex queries:
-* eq
+* eq 
 * all
 * ne
 * in
@@ -77,9 +77,9 @@ The following filter query arguments are added to list types, which you can use 
 * not_ends_with
 * not_in
 * exists
+* not 
 * type
 * AND
-* NOT
 * NOR
 * OR
 

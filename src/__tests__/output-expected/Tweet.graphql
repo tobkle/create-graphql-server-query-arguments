@@ -11,7 +11,7 @@ type Tweet {
 }
 
 extend type Query {
-  tweets(lastCreatedAt: Float, limit: Int, filter: TweetFilter, orderBy: [TweetOrderBy!]): [Tweet!]
+  tweets(lastCreatedAt: Float, limit: Int, skip: Int, filter: TweetFilter, orderBy: [TweetOrderBy!]): [Tweet!]
   tweet(id: ObjID!): Tweet
 }
 
@@ -60,6 +60,7 @@ input TweetFilter {
   body_gte: String
   body_eq: String
   body_ne: String
+  body_not: TweetFilter
   body_all: [String!]
   body_in: [String!]
   body_nin: [String!]
