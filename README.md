@@ -142,17 +142,14 @@ import { buildRequiredTypes } from 'create-graphql-server-query-arguments'; // <
 ...
 const typeDefs = [`
   scalar ObjID
-
   type Query {
     # A placeholder, please ignore
     __placeholder: Int
   }
-
   type Mutation {
     # A placeholder, please ignore
     __placeholder: Int
   }
-
   type Subscription {
     # A placeholder, please ignore
     __placeholder: Int
@@ -186,8 +183,6 @@ export default function generate(inputSchemaStr) {
 ```
 
 Add those types to your outputSchema.
-
-
 
 ## Documentation
 [API Documentation](https://tobkle.github.io/create-graphql-server-query-arguments/)
