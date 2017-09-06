@@ -9,7 +9,7 @@ import path from 'path';
  */
 
 export function buildRequiredTypes(pathToFile: string): any {
-  // for any reason npm install always forgets to install the .graphql file 
+  // for any reason npm install always forgets to install the .graphql file
   const filePath = path.join(__dirname, pathToFile || 'requiredTypes.js');
   return readString(filePath);
 }
