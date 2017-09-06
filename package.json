@@ -1,6 +1,6 @@
 {
   "name": "create-graphql-server-query-arguments",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "build query arguments",
   "main": "index.js",
   "repository": "https://github.com/tobkle/create-graphql-server-query-arguments",
