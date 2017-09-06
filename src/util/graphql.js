@@ -33,12 +33,7 @@ export function buildName(name) {
   return { kind: 'Name', value: name };
 }
 
-export function buildTypeDefinition(
-  name,
-  fields,
-  kind,
-  values
-) {
+export function buildTypeDefinition(name, fields, kind, values) {
   return {
     kind: kind || 'ObjectTypeDefinition',
     name: buildName(name),
