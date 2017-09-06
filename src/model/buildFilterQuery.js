@@ -11,9 +11,9 @@ export function buildFilterQuery(args: any): any {
   const query = {};
 
   // on no argument return empty query
-  if (!args) {
-    return query;
-  }
+  // if (!args) {
+  //   return query;
+  // }
 
   // on primitive types, just return the data as leaf values in the recursion
   switch (typeof args) {
@@ -278,7 +278,7 @@ export function buildFilterQuery(args: any): any {
               // the field starts with this string
               query[fieldName] = {
                 $regex: `^${buildFilterQuery(value)}`,
-                $options: 'im'
+                $options: 'm'
               };
               break;
 
@@ -286,37 +286,39 @@ export function buildFilterQuery(args: any): any {
               // the field ends with this string
               query[fieldName] = {
                 $regex: `${buildFilterQuery(value)}$`,
-                $options: 'im'
+                $options: 'm'
               };
               break;
 
             case 'not_contains':
               // the field does not contain this string
               query[fieldName] = {
-                // $not: {
-                $regex: `(?!${buildFilterQuery(value)})`,
-                $options: 'im'
-                // }
+                $regex: `^(?!.*${buildFilterQuery(value)})`,
+                $options: 'm'
               };
               break;
 
             case 'not_starts_with':
               // the field ends not with this string
               query[fieldName] = {
-                // $not: {
                 $regex: `^(?!${buildFilterQuery(value)})`,
-                $options: 'im'
-                // }
+                $options: 'm'
               };
               break;
 
             case 'not_ends_with':
-              // the field ends with this string
+              // // the field ends with this string
+              // query[fieldName] = {
+              //   $regex: `(?!${buildFilterQuery(value)})$`,
+              //   $options: 'm'
+              // };
+              // the field ends with this string case-in-sensitive
+              // it is called "negated or negative lookbehind" .*(?<!xyz)$
+              // Javascript isn't supporting this today
+              // so have to use a complicated look ahead pattern instead
               query[fieldName] = {
-                // $not: {
-                $regex: `(?!${buildFilterQuery(value)})$`,
-                $options: 'im'
-                // }
+                $regex: `^(?!.*${buildFilterQuery(value)}$).*$`,
+                $options: 'gm'
               };
               break;
 
@@ -347,10 +349,8 @@ export function buildFilterQuery(args: any): any {
             case 'not_contains_ci':
               // the field does not contain this string case-in-sensitive
               query[fieldName] = {
-                // $not: {
-                $regex: `(?!${buildFilterQuery(value)})`,
+                $regex: `^(?!.*${buildFilterQuery(value)})`,
                 $options: 'im'
-                // }
               };
               break;
 
@@ -366,11 +366,12 @@ export function buildFilterQuery(args: any): any {
 
             case 'not_ends_with_ci':
               // the field ends with this string case-in-sensitive
+              // it is called "negated or negative lookbehind" .*(?<!xyz)$
+              // Javascript isn't supporting this today
+              // so have to use a complicated look ahead pattern instead
               query[fieldName] = {
-                // $not: {
-                $regex: `(?!${buildFilterQuery(value)})$`,
-                $options: 'im'
-                // }
+                $regex: `^(?!.*${buildFilterQuery(value)}$).*$`,
+                $options: 'gim'
               };
               break;
           }

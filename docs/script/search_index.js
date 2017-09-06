@@ -1,8 +1,260 @@
 window.esdocSearchIndex = [
   [
-    "create-graphql-server-query-arguments/src/lib/buildquery.js~buildquery",
-    "function/index.html#static-function-buildQuery",
-    "<span>buildQuery</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/lib/buildQuery.js</span>",
+    "create-graphql-server-query-arguments/src/constants.js~asc",
+    "variable/index.html#static-variable-ASC",
+    "<span>ASC</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~boolean",
+    "variable/index.html#static-variable-BOOLEAN",
+    "<span>BOOLEAN</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~bson_type",
+    "variable/index.html#static-variable-BSON_TYPE",
+    "<span>BSON_TYPE</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~default_limit",
+    "variable/index.html#static-variable-DEFAULT_LIMIT",
+    "<span>DEFAULT_LIMIT</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~default_skip",
+    "variable/index.html#static-variable-DEFAULT_SKIP",
+    "<span>DEFAULT_SKIP</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~default_sort",
+    "variable/index.html#static-variable-DEFAULT_SORT",
+    "<span>DEFAULT_SORT</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~desc",
+    "variable/index.html#static-variable-DESC",
+    "<span>DESC</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~encoding",
+    "variable/index.html#static-variable-ENCODING",
+    "<span>ENCODING</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~enum",
+    "variable/index.html#static-variable-ENUM",
+    "<span>ENUM</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~float",
+    "variable/index.html#static-variable-FLOAT",
+    "<span>FLOAT</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~int",
+    "variable/index.html#static-variable-INT",
+    "<span>INT</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~query",
+    "variable/index.html#static-variable-QUERY",
+    "<span>QUERY</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~regex",
+    "variable/index.html#static-variable-REGEX",
+    "<span>REGEX</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/graphql.js~scalar_type_names",
+    "variable/index.html#static-variable-SCALAR_TYPE_NAMES",
+    "<span>SCALAR_TYPE_NAMES</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/graphql.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~src_dir",
+    "variable/index.html#static-variable-SRC_DIR",
+    "<span>SRC_DIR</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~string",
+    "variable/index.html#static-variable-STRING",
+    "<span>STRING</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~test_dir",
+    "variable/index.html#static-variable-TEST_DIR",
+    "<span>TEST_DIR</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~test_expected",
+    "variable/index.html#static-variable-TEST_EXPECTED",
+    "<span>TEST_EXPECTED</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~test_generated",
+    "variable/index.html#static-variable-TEST_GENERATED",
+    "<span>TEST_GENERATED</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~test_gql_data",
+    "variable/index.html#static-variable-TEST_GQL_DATA",
+    "<span>TEST_GQL_DATA</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/constants.js~test_gql_extension",
+    "variable/index.html#static-variable-TEST_GQL_EXTENSION",
+    "<span>TEST_GQL_EXTENSION</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/constants.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/graphql.js~addpaginationarguments",
+    "function/index.html#static-function-addPaginationArguments",
+    "<span>addPaginationArguments</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/graphql.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/graphql.js~applycustomdirectives",
+    "function/index.html#static-function-applyCustomDirectives",
+    "<span>applyCustomDirectives</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/graphql.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/graphql.js~argumentstoobject",
+    "function/index.html#static-function-argumentsToObject",
+    "<span>argumentsToObject</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/graphql.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/graphql.js~buildargument",
+    "function/index.html#static-function-buildArgument",
+    "<span>buildArgument</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/graphql.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/model/buildbasequery.js~buildbasequery",
+    "function/index.html#static-function-buildBaseQuery",
+    "<span>buildBaseQuery</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/model/buildBaseQuery.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/graphql.js~buildfield",
+    "function/index.html#static-function-buildField",
+    "<span>buildField</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/graphql.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/model/buildfilterquery.js~buildfilterquery",
+    "function/index.html#static-function-buildFilterQuery",
+    "<span>buildFilterQuery</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/model/buildFilterQuery.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/model/buildlimit.js~buildlimit",
+    "function/index.html#static-function-buildLimit",
+    "<span>buildLimit</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/model/buildLimit.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/graphql.js~buildname",
+    "function/index.html#static-function-buildName",
+    "<span>buildName</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/graphql.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/schema/buildrequiredtypes.js~buildrequiredtypes",
+    "function/index.html#static-function-buildRequiredTypes",
+    "<span>buildRequiredTypes</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/schema/buildRequiredTypes.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/model/buildskip.js~buildskip",
+    "function/index.html#static-function-buildSkip",
+    "<span>buildSkip</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/model/buildSkip.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/model/buildsortquery.js~buildsortquery",
+    "function/index.html#static-function-buildSortQuery",
+    "<span>buildSortQuery</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/model/buildSortQuery.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/graphql.js~buildtypedefinition",
+    "function/index.html#static-function-buildTypeDefinition",
+    "<span>buildTypeDefinition</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/graphql.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/graphql.js~buildtypeextension",
+    "function/index.html#static-function-buildTypeExtension",
+    "<span>buildTypeExtension</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/graphql.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/graphql.js~buildtypereference",
+    "function/index.html#static-function-buildTypeReference",
+    "<span>buildTypeReference</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/graphql.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/graphql.js~buildvalue",
+    "function/index.html#static-function-buildValue",
+    "<span>buildValue</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/graphql.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/schema/enhanceschemawithqueryarguments.js~enhanceschemawithqueryarguments",
+    "function/index.html#static-function-enhanceSchemaWithQueryArguments",
+    "<span>enhanceSchemaWithQueryArguments</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/schema/enhanceSchemaWithQueryArguments.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/graphql.js~getbasetype",
+    "function/index.html#static-function-getBaseType",
+    "<span>getBaseType</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/graphql.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/graphql.js~gettype",
+    "function/index.html#static-function-getType",
+    "<span>getType</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/graphql.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/graphql.js~idargument",
+    "function/index.html#static-function-idArgument",
+    "<span>idArgument</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/graphql.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/graphql.js~isscalarfield",
+    "function/index.html#static-function-isScalarField",
+    "<span>isScalarField</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/graphql.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/capitalization.js~lcfirst",
+    "function/index.html#static-function-lcFirst",
+    "<span>lcFirst</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/capitalization.js</span>",
     "function"
   ],
   [
@@ -10,6 +262,36 @@ window.esdocSearchIndex = [
     "variable/index.html#static-variable-modulePath",
     "<span>modulePath</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/index.js</span>",
     "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/model/preparequeries.js~preparequeries",
+    "function/index.html#static-function-prepareQueries",
+    "<span>prepareQueries</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/model/prepareQueries.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/read.js~readinput",
+    "function/index.html#static-function-readInput",
+    "<span>readInput</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/read.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/read.js~readstring",
+    "function/index.html#static-function-readString",
+    "<span>readString</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/read.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/read.js~templatetoast",
+    "function/index.html#static-function-templateToAst",
+    "<span>templateToAst</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/read.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/util/capitalization.js~ucfirst",
+    "function/index.html#static-function-ucFirst",
+    "<span>ucFirst</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/capitalization.js</span>",
+    "function"
   ],
   [
     "src/.external-ecmascript.js~array",
@@ -294,15 +576,93 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/constants.js",
+    "file/src/constants.js.html",
+    "src/constants.js",
+    "file"
+  ],
+  [
     "src/index.js",
     "file/src/index.js.html",
     "src/index.js",
     "file"
   ],
   [
-    "src/lib/buildquery.js",
-    "file/src/lib/buildQuery.js.html",
-    "src/lib/buildQuery.js",
+    "src/model/buildbasequery.js",
+    "file/src/model/buildBaseQuery.js.html",
+    "src/model/buildBaseQuery.js",
+    "file"
+  ],
+  [
+    "src/model/buildfilterquery.js",
+    "file/src/model/buildFilterQuery.js.html",
+    "src/model/buildFilterQuery.js",
+    "file"
+  ],
+  [
+    "src/model/buildlimit.js",
+    "file/src/model/buildLimit.js.html",
+    "src/model/buildLimit.js",
+    "file"
+  ],
+  [
+    "src/model/buildskip.js",
+    "file/src/model/buildSkip.js.html",
+    "src/model/buildSkip.js",
+    "file"
+  ],
+  [
+    "src/model/buildsortquery.js",
+    "file/src/model/buildSortQuery.js.html",
+    "src/model/buildSortQuery.js",
+    "file"
+  ],
+  [
+    "src/model/index.js",
+    "file/src/model/index.js.html",
+    "src/model/index.js",
+    "file"
+  ],
+  [
+    "src/model/preparequeries.js",
+    "file/src/model/prepareQueries.js.html",
+    "src/model/prepareQueries.js",
+    "file"
+  ],
+  [
+    "src/schema/buildrequiredtypes.js",
+    "file/src/schema/buildRequiredTypes.js.html",
+    "src/schema/buildRequiredTypes.js",
+    "file"
+  ],
+  [
+    "src/schema/enhanceschemawithqueryarguments.js",
+    "file/src/schema/enhanceSchemaWithQueryArguments.js.html",
+    "src/schema/enhanceSchemaWithQueryArguments.js",
+    "file"
+  ],
+  [
+    "src/schema/index.js",
+    "file/src/schema/index.js.html",
+    "src/schema/index.js",
+    "file"
+  ],
+  [
+    "src/util/capitalization.js",
+    "file/src/util/capitalization.js.html",
+    "src/util/capitalization.js",
+    "file"
+  ],
+  [
+    "src/util/graphql.js",
+    "file/src/util/graphql.js.html",
+    "src/util/graphql.js",
+    "file"
+  ],
+  [
+    "src/util/read.js",
+    "file/src/util/read.js.html",
+    "src/util/read.js",
     "file"
   ]
 ]

@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/index.js | create-graphql-server-authorization</title>
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/util/graphql.js | create-graphql-server-authorization</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -82,26 +82,149 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
+<div class="content" data-ice="content"><h1 data-ice="title">src/util/graphql.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { Kind } from &apos;graphql&apos;;
+import includes from &apos;lodash.includes&apos;;
 
-/**
- * CREATE-GRAPHQL-SERVER-QUERY-ARGUMENTS
- * 
- * this module adds query arguments to the schema
- * and maps the query arguments to a mongoDB data access
- *
- */
+export const SCALAR_TYPE_NAMES = [
+  &apos;Int&apos;,
+  &apos;Float&apos;,
+  &apos;String&apos;,
+  &apos;Boolean&apos;,
+  &apos;ID&apos;,
+  &apos;ObjID&apos;
+];
 
-/* to find this path from various places, return this modules absolute path: */
-export const modulePath = __dirname;
+export function getBaseType(type) {
+  if (type.kind === &apos;ListType&apos; || type.kind === &apos;NonNullType&apos;) {
+    return getBaseType(type.type);
+  }
+  return type;
+}
 
-// prepares all the required queries for a mongoDB access
-export { prepareQueries } from &apos;./model&apos;;
+export function argumentsToObject(argumentsAst) {
+  const result = {};
+  argumentsAst.forEach(argument =&gt; {
+    result[argument.name.value] = argument.value.value;
+  });
+  return result;
+}
 
-// provides a string with required types
-// clones a given inputSchema and enhance it with query arguments
-export { buildRequiredTypes, enhanceSchemaWithQueryArguments } from &apos;./schema&apos;;
+export function isScalarField(field) {
+  return includes(SCALAR_TYPE_NAMES, getBaseType(field.type).name.value);
+}
+
+export function buildName(name) {
+  return { kind: &apos;Name&apos;, value: name };
+}
+
+export function buildTypeDefinition(
+  name,
+  fields,
+  kind,
+  values
+) {
+  return {
+    kind: kind || &apos;ObjectTypeDefinition&apos;,
+    name: buildName(name),
+    interfaces: [],
+    directives: [],
+    fields,
+    values: values || []
+  };
+}
+
+export function buildTypeExtension(type) {
+  return {
+    kind: Kind.TYPE_EXTENSION_DEFINITION,
+    definition: type
+  };
+}
+
+export function buildTypeReference(name) {
+  if (name[name.length - 1] === &apos;!&apos;) {
+    return {
+      kind: &apos;NonNullType&apos;,
+      type: buildTypeReference(name.substring(0, name.length - 1))
+    };
+  }
+
+  if (name[0] === &apos;[&apos; &amp;&amp; name[name.length - 1] === &apos;]&apos;) {
+    return {
+      kind: &apos;ListType&apos;,
+      type: buildTypeReference(name.substring(1, name.length - 1))
+    };
+  }
+
+  return {
+    kind: &apos;NamedType&apos;,
+    name: buildName(name)
+  };
+}
+
+export function buildField(name, args, typeName) {
+  return {
+    kind: &apos;FieldDefinition&apos;,
+    name: buildName(name),
+    arguments: args,
+    type: buildTypeReference(typeName)
+  };
+}
+
+export function buildValue(name, args) {
+  return {
+    kind: &apos;EnumValueDefinition&apos;,
+    name: buildName(name),
+    arguments: args
+  };
+}
+
+export function buildArgument(name, type) {
+  return {
+    kind: &apos;InputValueDefinition&apos;,
+    name: buildName(name),
+    type: buildTypeReference(type),
+    defaultValue: null,
+    directives: []
+  };
+}
+
+export function addPaginationArguments(field) {
+  field.arguments.push(buildArgument(&apos;lastCreatedAt&apos;, &apos;Float&apos;));
+  field.arguments.push(buildArgument(&apos;limit&apos;, &apos;Int&apos;));
+}
+
+// Apply all the directives that modify the field&apos;s schema. At this stage
+// this is simply the pagination directives, which add pagination arguments
+// to the field.
+export function applyCustomDirectives(field) {
+  field.directives.forEach(directive =&gt; {
+    const directiveName = directive.name.value;
+    const isPaginated = includes(
+      [&apos;hasMany&apos;, &apos;hasAndBelongsToMany&apos;, &apos;belongsToMany&apos;],
+      directiveName
+    );
+    if (isPaginated) {
+      addPaginationArguments(field);
+    }
+  });
+}
+
+export function idArgument() {
+  return buildArgument(&apos;id&apos;, &apos;ObjID!&apos;);
+}
+
+export function getType(level) {
+  if (level.kind === &apos;NamedType&apos;) {
+    return level.name.value;
+  }
+
+  if (level.type) {
+    return getType(level.type);
+  }
+
+  return &apos;&apos;;
+}
 </code></pre>
 
 </div>

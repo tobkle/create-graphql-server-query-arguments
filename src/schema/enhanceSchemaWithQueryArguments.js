@@ -38,7 +38,7 @@ import { lcFirst } from '../util/capitalization';
  * prepares the schema for the additional query arguments types
  * @public
  * @param {object} inputSchema - the input's schema with all fields
- * @return {object} outputSchema - the enhanced output Schema
+ * @return {object} enhancedSchema - the enhanced output Schema
  */
 
 export function enhanceSchemaWithQueryArguments(inputSchema: any): any {
@@ -287,6 +287,7 @@ function addQueryArguments(enhancedSchema, queryArguments) {
  * @param {object} field - field of the type
  * @property {string} name - name of the field
  * @property {string} type - type of the field
+ * @param {string} TypeName - name of the type
  * @return {array} argumentFields - map of arguments and their types
  */
 

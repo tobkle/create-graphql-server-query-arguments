@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/index.js | create-graphql-server-authorization</title>
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/schema/enhanceSchemaWithQueryArguments.js | create-graphql-server-authorization</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -82,26 +82,367 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/schema/enhanceSchemaWithQueryArguments.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
+import cloneDeep from &apos;lodash.clonedeep&apos;;
+
+import {
+  getBaseType,
+  buildTypeDefinition,
+  buildField,
+  buildValue,
+  buildArgument,
+  isScalarField
+} from &apos;../util/graphql&apos;;
+
+import {
+  DOCUMENT,
+  OBJECT_TYPE_DEFINITION,
+  INPUT_OBJECT_TYPE_DEFINITION,
+  ENUM_TYPE_DEFINITION,
+  TYPE_EXTENSION_DEFINITION,
+  LIST_TYPE,
+  FIELD_DEFINITION,
+  NAME
+} from &apos;graphql/language/kinds&apos;;
+
+import {
+  INT,
+  FLOAT,
+  STRING,
+  ENUM,
+  BOOLEAN,
+  BSON_TYPE,
+  REGEX,
+  QUERY
+} from &apos;../constants&apos;;
+
+import { lcFirst } from &apos;../util/capitalization&apos;;
 
 /**
- * CREATE-GRAPHQL-SERVER-QUERY-ARGUMENTS
- * 
- * this module adds query arguments to the schema
- * and maps the query arguments to a mongoDB data access
- *
+ * prepares the schema for the additional query arguments types
+ * @public
+ * @param {object} inputSchema - the input&apos;s schema with all fields
+ * @return {object} enhancedSchema - the enhanced output Schema
  */
 
-/* to find this path from various places, return this modules absolute path: */
-export const modulePath = __dirname;
+export function enhanceSchemaWithQueryArguments(inputSchema: any): any {
+  const enhancedSchema = cloneDeep(inputSchema);
+  const queryArguments = {};
 
-// prepares all the required queries for a mongoDB access
-export { prepareQueries } from &apos;./model&apos;;
+  if (enhancedSchema.kind === DOCUMENT) {
+    enhancedSchema.definitions
+      .filter(def =&gt; def.kind === OBJECT_TYPE_DEFINITION)
+      .forEach(({ fields, name }) =&gt; {
+        const TypeName = name.value;
 
-// provides a string with required types
-// clones a given inputSchema and enhance it with query arguments
-export { buildRequiredTypes, enhanceSchemaWithQueryArguments } from &apos;./schema&apos;;
+        // get all field definition types
+        const fieldTypes = getFieldTypes(fields);
+
+        // prepare &quot;filter&quot; query argument fields for scalar types
+        const filterInputFields = getFilterInputFields(fieldTypes, TypeName);
+
+        // prepare an enum to contain all sortable fields for the orderBy
+        const sortEnumValues = getEnumValues(fieldTypes);
+
+        // prepare &quot;orderBy&quot; query argument fields
+        const orderByInputFields = getOrderByInputFields(TypeName);
+
+        if (filterInputFields.length &gt; 0) {
+          const queryFieldName = `${lcFirst(TypeName)}s`;
+          const FilterInputTypeName = `${TypeName}Filter`;
+          const SortEnumTypeName = `${TypeName}Sort`;
+          const OrderByInputTypeName = `${TypeName}OrderBy`;
+
+          addFilterInputType(
+            FilterInputTypeName,
+            filterInputFields,
+            enhancedSchema
+          );
+          addSortEnumType(SortEnumTypeName, sortEnumValues, enhancedSchema);
+          addOrderByInputType(
+            OrderByInputTypeName,
+            orderByInputFields,
+            enhancedSchema
+          );
+
+          queryArguments[queryFieldName] = {
+            filterName: FilterInputTypeName,
+            orderByName: `[${OrderByInputTypeName}!]`
+          };
+        }
+      });
+
+    // add the newly created types to the Query itself,
+    // to make them accessable by users
+    addQueryArguments(enhancedSchema, queryArguments);
+  }
+
+  return enhancedSchema;
+}
+
+/**
+ * prepares the orderBy input type
+ * @private
+ * @param {string} TypeName - the name of the type
+ * @return {object} fieldAST - the AST of an input type field
+ */
+
+function getOrderByInputFields(TypeName) {
+  // prepare &quot;orderBy&quot; query argument fields
+  return [
+    buildField(&apos;sort&apos;, [], `${TypeName}Sort!`),
+    buildField(&apos;direction&apos;, [], &apos;Direction = ASC&apos;)
+  ];
+}
+
+/**
+ * prepare enum values out of field types
+ * @private
+ * @param {array} fieldTypes - AST array of field definitions
+ * @return {object} fieldAST - the AST of enum values
+ */
+
+function getEnumValues(fieldTypes) {
+  // prepare an enum to contain all sortable fields for the orderBy
+  return fieldTypes
+    .filter(field =&gt; field.scalar)
+    .map(field =&gt; buildValue(field.name, [], STRING));
+}
+
+/**
+ * prepare enum values out of field types
+ * @private
+ * @param {array} fieldTypes - AST array of field definitions
+ * @param {string} TypeName - the name of the type
+ * @return {object} fieldAST - the AST of enum values
+ */
+
+function getFilterInputFields(fieldTypes, TypeName) {
+  // prepare &quot;filter&quot; query argument fields for scalar types
+  return fieldTypes
+    .filter(field =&gt; field.scalar)
+    .map(field =&gt; prepareArgument(field, TypeName))
+    .reduce((array, field) =&gt; array.concat(field), [
+      { [`AND`]: `[${TypeName}Filter!]` },
+      { [`NOR`]: `[${TypeName}Filter!]` },
+      { [`OR`]: `[${TypeName}Filter!]` }
+    ])
+    .map(field =&gt; {
+      const name = Object.keys(field)[0];
+      const type = field[name];
+      return buildField(name, [], type);
+    });
+}
+
+/**
+ * analyse and identify field information for further processing
+ * @private
+ * @param {array} fields - AST array of field definitions
+ * @return {array} fieldAST - list of field descriptions
+ */
+
+function getFieldTypes(fields) {
+  return fields.map(field =&gt; ({
+    name: field.name.value,
+    type: getBaseType(field.type).name.value,
+    scalar: isScalarField(field)
+  }));
+}
+
+/**
+ * registers the &quot;filter&quot; input type into the AST
+ * @private
+ * @param {string} FilterInputTypeName - name of the input field
+ * @param {array} filterInputFields - AST array of field definitions
+ * @param {object} enhancedSchema - AST of the document
+ */
+
+function addFilterInputType(
+  FilterInputTypeName,
+  filterInputFields,
+  enhancedSchema
+) {
+  // add &quot;input &lt;TypeName&gt;Filter&quot; type to the schema
+  enhancedSchema.definitions.push(
+    buildTypeDefinition(
+      FilterInputTypeName,
+      filterInputFields,
+      INPUT_OBJECT_TYPE_DEFINITION
+    )
+  );
+}
+
+/**
+ * registers the &quot;enum &lt;Type&gt;Sort&quot; enum type into the AST
+ * @private
+ * @param {string} SortEnumTypeName - name of the enum field
+ * @param {array} sortEnumValues - AST array of field definitions
+ * @param {object} enhancedSchema - AST of the document
+ */
+
+function addSortEnumType(SortEnumTypeName, sortEnumValues, enhancedSchema) {
+  // add &quot;enum &lt;TypeName&gt;Sort&quot; type
+  enhancedSchema.definitions.push(
+    buildTypeDefinition(
+      SortEnumTypeName,
+      [],
+      ENUM_TYPE_DEFINITION,
+      sortEnumValues
+    )
+  );
+}
+
+/**
+ * registers the &quot;input &lt;Type&gt;OrderBy&quot; input type into the AST
+ * @private
+ * @param {string} OrderByInputTypeName - name of the input field
+ * @param {array} orderByInputFields - AST array of field definitions
+ * @param {object} enhancedSchema - AST of the document
+ */
+
+function addOrderByInputType(
+  OrderByInputTypeName,
+  orderByInputFields,
+  enhancedSchema
+) {
+  // add &quot;input &lt;TypeName&gt;OrderBy&quot; type
+  enhancedSchema.definitions.push(
+    buildTypeDefinition(
+      OrderByInputTypeName,
+      orderByInputFields,
+      INPUT_OBJECT_TYPE_DEFINITION
+    )
+  );
+}
+
+/**
+ * adds the query arguments &quot;filter&quot; and &quot;orderBy&quot; to the &quot;extend Query&quot; type
+ * @private
+ * @param {object} enhancedSchema - AST document definition, to be enhanced
+ * @param {array} queryArguments - dictionary of queryArguments to be added
+ */
+
+function addQueryArguments(enhancedSchema, queryArguments) {
+  // add the arguments to the Query:
+  // e.g.: tweets(filter: TweetFilter, orderBy: [TweetOrderBy!])
+  enhancedSchema.definitions
+    .filter(
+      def =&gt;
+        def.kind === TYPE_EXTENSION_DEFINITION &amp;&amp;
+        def.definition.kind === OBJECT_TYPE_DEFINITION &amp;&amp;
+        def.definition.name.value === QUERY
+    )
+    .forEach(({ definition }) =&gt; {
+      const { fields, name } = definition;
+
+      if (fields &amp;&amp; name) {
+        // find the right fields
+        fields
+          // only in field definition, which are a list, such as &apos;users&apos;
+          .filter(
+            field =&gt;
+              field.type.kind === LIST_TYPE &amp;&amp; field.kind === FIELD_DEFINITION
+          )
+          .forEach(field =&gt; {
+            // as arguments is a reserved field, we need to rename to args
+            const args = field.arguments;
+
+            const queryArgument = queryArguments[field.name.value];
+            // if we have arguments to add for this type e.g. &apos;users&apos;
+            if (queryArgument &amp;&amp; field.name.kind === NAME &amp;&amp; args) {
+              // add &quot;skip&quot; query argument
+              args.push(buildArgument(&apos;skip&apos;, &apos;Int&apos;));
+
+              // add &quot;filter&quot; query argument
+              args.push(buildArgument(&apos;filter&apos;, queryArgument.filterName));
+
+              // add &quot;orderBy&quot; query argument
+              args.push(buildArgument(&apos;orderBy&apos;, queryArgument.orderByName));
+            }
+          });
+      }
+    });
+}
+
+/**
+ * define the combinations of input and output types
+ * depending on the later expected values for the functions
+ * @private
+ * @param {object} field - field of the type
+ * @property {string} name - name of the field
+ * @property {string} type - type of the field
+ * @param {string} TypeName - name of the type
+ * @return {array} argumentFields - map of arguments and their types
+ */
+
+function prepareArgument({ name, type }, TypeName) {
+  switch (type) {
+    case STRING:
+    case ENUM:
+      return [
+        { [`${name}`]: type },
+        { [`${name}_lt`]: type },
+        { [`${name}_lte`]: type },
+        { [`${name}_gt`]: type },
+        { [`${name}_gte`]: type },
+        { [`${name}_eq`]: type },
+        { [`${name}_ne`]: type },
+        { [`${name}_not`]: `${TypeName}Filter` },
+        { [`${name}_all`]: `[${type}!]` },
+        { [`${name}_in`]: `[${type}!]` },
+        { [`${name}_nin`]: `[${type}!]` },
+        { [`${name}_not_in`]: `[${type}!]` },
+        { [`${name}_exists`]: BOOLEAN },
+        { [`${name}_type`]: BSON_TYPE },
+        { [`${name}_regex`]: REGEX },
+        { [`${name}_contains`]: STRING },
+        { [`${name}_starts_with`]: STRING },
+        { [`${name}_ends_with`]: STRING },
+        { [`${name}_not_contains`]: STRING },
+        { [`${name}_not_starts_with`]: STRING },
+        { [`${name}_not_ends_with`]: STRING },
+        { [`${name}_contains_ci`]: STRING },
+        { [`${name}_starts_with_ci`]: STRING },
+        { [`${name}_ends_with_ci`]: STRING },
+        { [`${name}_not_contains_ci`]: STRING },
+        { [`${name}_not_starts_with_ci`]: STRING },
+        { [`${name}_not_ends_with_ci`]: STRING }
+      ];
+
+    case INT:
+    case FLOAT:
+      return [
+        { [`${name}`]: type },
+        { [`${name}_lt`]: type },
+        { [`${name}_lte`]: type },
+        { [`${name}_gt`]: type },
+        { [`${name}_gte`]: type },
+        { [`${name}_eq`]: type },
+        { [`${name}_ne`]: type },
+        { [`${name}_all`]: `[${type}!]` },
+        { [`${name}_in`]: `[${type}!]` },
+        { [`${name}_nin`]: `[${type}!]` },
+        { [`${name}_not_in`]: `[${type}!]` },
+        { [`${name}_exists`]: BOOLEAN },
+        { [`${name}_type`]: BSON_TYPE }
+      ];
+
+    case BOOLEAN:
+    default:
+      return [
+        { [`${name}`]: type },
+        { [`${name}_eq`]: type },
+        { [`${name}_ne`]: type },
+        { [`${name}_all`]: `[${type}!]` },
+        { [`${name}_in`]: `[${type}!]` },
+        { [`${name}_nin`]: `[${type}!]` },
+        { [`${name}_not_in`]: `[${type}!]` },
+        { [`${name}_exists`]: BOOLEAN },
+        { [`${name}_type`]: BSON_TYPE }
+      ];
+  }
+}
 </code></pre>
 
 </div>

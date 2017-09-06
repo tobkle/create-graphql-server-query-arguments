@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/index.js | create-graphql-server-authorization</title>
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/util/read.js | create-graphql-server-authorization</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -82,26 +82,56 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
+<div class="content" data-ice="content"><h1 data-ice="title">src/util/read.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import fs from &apos;fs&apos;;
+import { parse } from &apos;graphql&apos;;
+import { parse as recastParse } from &apos;recast&apos;;
+import * as babylon from &apos;babylon&apos;;
 
 /**
- * CREATE-GRAPHQL-SERVER-QUERY-ARGUMENTS
- * 
- * this module adds query arguments to the schema
- * and maps the query arguments to a mongoDB data access
- *
+ * reads a .graphql file and parses the file
+ * @param {string} path - path of the graphql file
+ * @return {object} schemaObject - returns a parsed schema file
  */
 
-/* to find this path from various places, return this modules absolute path: */
-export const modulePath = __dirname;
+export default function readInput(path) {
+  return parse(fs.readFileSync(path, &apos;utf8&apos;));
+}
 
-// prepares all the required queries for a mongoDB access
-export { prepareQueries } from &apos;./model&apos;;
+/**
+ * reads a .graphql file
+ * @param {string} path - path of the graphql file
+ * @return {string} schemaObject - returns a schema file
+ */
 
-// provides a string with required types
-// clones a given inputSchema and enhance it with query arguments
-export { buildRequiredTypes, enhanceSchemaWithQueryArguments } from &apos;./schema&apos;;
+export function readString(path) {
+  return fs.readFileSync(path, &apos;utf8&apos;);
+}
+
+const babylonParser = {
+  parse(code) {
+    return babylon.parse(code, {
+      sourceType: &apos;module&apos;,
+      plugins: [&apos;objectRestSpread&apos;]
+    });
+  }
+};
+
+/**
+ * Take a template, replacing each replacement.
+ * @param {string} template - template
+ * @param {string} replacements - replacements within the template
+ * @return {object} codeAST - parsed code
+ */
+
+export function templateToAst(template, replacements) {
+  const source = Object.keys(replacements).reduce(
+    (string, key) =&gt; string.replace(new RegExp(key, &apos;g&apos;), replacements[key]),
+    template
+  );
+
+  return recastParse(source, { parser: babylonParser });
+}
 </code></pre>
 
 </div>

@@ -36,16 +36,16 @@ export function buildName(name) {
 export function buildTypeDefinition(
   name,
   fields,
-  kind = 'ObjectTypeDefinition',
-  values = []
+  kind,
+  values
 ) {
   return {
-    kind,
+    kind: kind || 'ObjectTypeDefinition',
     name: buildName(name),
     interfaces: [],
     directives: [],
     fields,
-    values
+    values: values || []
   };
 }
 

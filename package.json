@@ -83,12 +83,14 @@
     "global": "^4.3.2",
     "graphql": "^0.11.2",
     "iterall": "^1.1.0",
+    "jwt-simple": "^0.5.1",
     "lodash": "4.16.4",
     "lodash.clonedeep": "^4.5.0",
     "lodash.includes": "^4.3.0",
     "lodash.isarraylike": "^4.2.0",
     "lodash.isobject": "^3.0.2",
     "lodash.merge": "^4.6.0",
-    "mongodb": "^2.2.31"
+    "mongodb": "^2.2.31",
+    "node-fetch": "^1.7.2"
   }
 }

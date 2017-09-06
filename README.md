@@ -4,8 +4,10 @@
 
 Build query arguments for filter and orderBy MongoDB queries.
 
-** This is still under development **
-** TODO: prepare proper end-to-end test cases for the different filters **
+Added 61 test cases, which pass against my local server.
+TODO: There can be more test cases, with complex queries and a critical review of the tests.
+TODO: test app to run those test cases against. Used so far my local server.
+TODO: When server is up and running: rename src/__tests__/end-to-end/index-test-cases.js back to index-test-cases-test.js, in order to have it in the test run with Mocha.
 
 ## Purpose
 You build a GraphQL server with the npm package "create-graphql-server", which serves as a backend to web applications. This "create-graphql-server" generates schemas, resolvers and models for an express-js server.
@@ -164,21 +166,18 @@ export default typeDefs;
 Caution: Do the same again in the "test/output-app/schema/index.js" to have proper test runs.
 
 ### Installation Part 4 -- Generator for Schema for individual argument type definitions
-Add to file "generate/index.js" the following two statements:
+Add to file "generate/schema/index.js" the following two statements:
 ```javascript
 ...
 import { 
 	enhanceSchemaWithQueryArguments 
-} from 'create-graphql-server-query-arguments'; // <===
-
-export default function generate(inputSchemaStr) {
-  const inputSchema = parse(inputSchemaStr);
-  const type = inputSchema.definitions[0];
-  const TypeName = type.name.value;
-  const typeName = lcFirst(TypeName);
-  const outputSchema = generateSchema(inputSchema);
-  const enhancedSchema = enhanceSchemaWithQueryArguments(outputSchema); // <=== 
+} from 'create-graphql-server-query-arguments'; // <== here
 ...
+...
+  // at the end enhance with query arguments...
+  const outputSchemaWithArguments = enhanceSchemaWithQueryArguments(outputSchemaWithAuth); // <== here
+
+  return outputSchemaWithArguments; // <== here
 }
 ```
 
@@ -196,4 +195,11 @@ yarn test
 ## Contributing
 In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.
 
+# Example Queries
 
+```javascript
+
+```
+
+Have a look in the test directory to see more:
+[index-test-cases](https://github.com/tobkle/create-graphql-server-query-arguments/tree/master/src/__tests__/end-to-end/)

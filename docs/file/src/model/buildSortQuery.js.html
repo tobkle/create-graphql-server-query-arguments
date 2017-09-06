@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/index.js | create-graphql-server-authorization</title>
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/model/buildSortQuery.js | create-graphql-server-authorization</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -82,26 +82,38 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/model/buildSortQuery.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
+import { DEFAULT_SORT, DESC } from &apos;../constants&apos;;
 
 /**
- * CREATE-GRAPHQL-SERVER-QUERY-ARGUMENTS
- * 
- * this module adds query arguments to the schema
- * and maps the query arguments to a mongoDB data access
- *
+ * sets the sort query for .sort(keyOrList, direction)
+ * @public
+ * @param {object} args - query arguments for the .find() method
+ * @return {object} sortQuery - sort criteria
  */
 
-/* to find this path from various places, return this modules absolute path: */
-export const modulePath = __dirname;
+export function buildSortQuery(args: any): any {
+  // keyOrList string | array | object the key or keys for the sort
+  const sortQuery = {};
 
-// prepares all the required queries for a mongoDB access
-export { prepareQueries } from &apos;./model&apos;;
+  // if there is no sort criteria, use at least the order of creation time
+  // which we&apos;ve stored in the constants as defaults
+  if (!args.orderBy || args.orderBy.length === 0) {
+    return DEFAULT_SORT;
+  }
 
-// provides a string with required types
-// clones a given inputSchema and enhance it with query arguments
-export { buildRequiredTypes, enhanceSchemaWithQueryArguments } from &apos;./schema&apos;;
+  // if there are sort criterias from the schema&apos;s &quot;enum &lt;type&gt;Sort&quot;
+  // sort = sort field name
+  // direction = number ASC =&gt; 1, DESC =&gt; -1
+  // mongoDB sort directions for ASC = 1, for DESC = -1
+  // if there is no direction provided set default to ASC
+  args.orderBy.forEach(
+    ({ sort, direction }) =&gt; (sortQuery[sort] = direction === DESC ? -1 : 1)
+  );
+
+  return sortQuery;
+}
 </code></pre>
 
 </div>

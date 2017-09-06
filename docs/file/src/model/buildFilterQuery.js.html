@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/model/buildFilterQuery.js | create-graphql-server-authorization</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Adds authorization to create-graphql-server"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="create-graphql-server-authorization"><meta property="twitter:description" content="Adds authorization to create-graphql-server"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/tobkle/create-graphql-server-authorization"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ASC">ASC</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BOOLEAN">BOOLEAN</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BSON_TYPE">BSON_TYPE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DEFAULT_LIMIT">DEFAULT_LIMIT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DEFAULT_SKIP">DEFAULT_SKIP</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DEFAULT_SORT">DEFAULT_SORT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DESC">DESC</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ENCODING">ENCODING</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ENUM">ENUM</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-FLOAT">FLOAT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-INT">INT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-QUERY">QUERY</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-REGEX">REGEX</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SRC_DIR">SRC_DIR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STRING">STRING</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TEST_DIR">TEST_DIR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TEST_EXPECTED">TEST_EXPECTED</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TEST_GENERATED">TEST_GENERATED</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TEST_GQL_DATA">TEST_GQL_DATA</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TEST_GQL_EXTENSION">TEST_GQL_EXTENSION</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modulePath">modulePath</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#model">model</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildBaseQuery">buildBaseQuery</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildFilterQuery">buildFilterQuery</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildLimit">buildLimit</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildSkip">buildSkip</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildSortQuery">buildSortQuery</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepareQueries">prepareQueries</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#schema">schema</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildRequiredTypes">buildRequiredTypes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-enhanceSchemaWithQueryArguments">enhanceSchemaWithQueryArguments</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#util">util</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-lcFirst">lcFirst</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ucFirst">ucFirst</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addPaginationArguments">addPaginationArguments</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-applyCustomDirectives">applyCustomDirectives</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-argumentsToObject">argumentsToObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildArgument">buildArgument</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildField">buildField</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildName">buildName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildTypeDefinition">buildTypeDefinition</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildTypeExtension">buildTypeExtension</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildTypeReference">buildTypeReference</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildValue">buildValue</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getBaseType">getBaseType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getType">getType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-idArgument">idArgument</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isScalarField">isScalarField</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readInput">readInput</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readString">readString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-templateToAst">templateToAst</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SCALAR_TYPE_NAMES">SCALAR_TYPE_NAMES</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/model/buildFilterQuery.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
+import isArrayLike from &apos;lodash.isarraylike&apos;;
+import isObject from &apos;lodash.isobject&apos;;
+
+/*
+ * build a query for the type model accessing mongodb
+ * @public
+ */
+
+export function buildFilterQuery(args: any): any {
+  const query = {};
+
+  // on no argument return empty query
+  // if (!args) {
+  //   return query;
+  // }
+
+  // on primitive types, just return the data as leaf values in the recursion
+  switch (typeof args) {
+    case &apos;boolean&apos;:
+      return args;
+    case &apos;number&apos;:
+      return args;
+    case &apos;string&apos;:
+      return args;
+    case &apos;function&apos;:
+      return args;
+    case &apos;object&apos;:
+      // only on &quot;ObjectID&quot;s, we don&apos;t go deeper into this Object
+      // other &quot;objects&quot; will be handled below
+      if (args._bsontype &amp;&amp; args._bsontype === &apos;ObjectID&apos;) {
+        return args;
+      }
+  }
+
+  // on array like types, return the interpreted mapped values.
+  // array elements can be also query objects,
+  // so we have to analyze each one of them first, before we return them
+  // back as an array
+  if (isArrayLike(args) &amp;&amp; args.length &amp;&amp; args.length &gt; 0) {
+    return args.map(item =&gt; buildFilterQuery(item));
+  }
+
+  // on object like types, analyze the graphql provided query arguments...
+  if (isObject(args)) {
+    // get all the keys of the argument
+    const keys = Object.keys(args);
+
+    // analyze all arguments and map them to mongodb query parts
+    keys.forEach(key =&gt; {
+      // a key might look like: e.g. &quot;bodyText_not_starts_with&quot;
+      // to analyze it, we need to split off the field name from the operation
+      const keyParts = key.split(&apos;_&apos;);
+
+      // number of keyParts e.g. 4 as a cloned field, as keyParts changes later
+      const length = 0 + keyParts.length;
+
+      // the fieldName is then e.g. &quot;bodyText&quot;, get the first array element
+      let fieldName = keyParts.shift();
+
+      // our &quot;id&quot; field is in mongo &quot;_id&quot;
+      if (fieldName === &apos;id&apos;) {
+        fieldName = &apos;_id&apos;;
+      }
+
+      // the operation is then: e.g. &quot;not_starts_with&quot;
+      const operation = keyParts.join(&apos;_&apos;);
+
+      // the value which was passed in to this operation, might be a deep Object
+      // so it has to be analyzed recursively
+      const value = args[key];
+
+      switch (length) {
+        // if there is only 1 key part provided, it must be one of the special
+        // cases such as AND, NOT NOR, OR,
+        // or the default case, that it had just provided a simple field name
+        case 1:
+          switch (fieldName) {
+            case &apos;AND&apos;:
+              // $and performs a logical AND operation on an array of two or
+              // more expressions, (e.g. &lt;expression1&gt;, &lt;expression2&gt;, etc.)
+              // and selects the documents, that satisfy all the expressions
+              // in the array.
+              //     $and   : [ { tags: &quot;ssl&quot; }, { tags: &quot;security&quot; } ]
+              query[&apos;$and&apos;] = buildFilterQuery(value);
+              break;
+
+            case &apos;NOR&apos;:
+              // $nor performs a logical NOR operation on an array of one or
+              // more query expression and selects the documents that fail
+              // all the query expressions in the array.
+              // db.inventory.find({ $nor: [ { price: 1.99 }, { sale: true } ]})
+              query[&apos;$nor&apos;] = buildFilterQuery(value);
+              break;
+
+            case &apos;OR&apos;:
+              // $or operator performs a logical OR operation on an array of
+              // two or more &lt;expressions&gt; and selects the documents that
+              // satisfy at least one of the &lt;expressions&gt;.
+              // db.inventory.find({
+              //   $or: [ { quantity: { $lt: 20 } }, { price: 10 } ]
+              // })
+              query[&apos;$or&apos;] = buildFilterQuery(value);
+              break;
+
+            default:
+              // the trivial case
+              // fieldName = value
+              query[fieldName] = buildFilterQuery(value);
+              break;
+          }
+          break;
+
+        // if there are more than one keyParts, we know, it must be
+        // one of the following operations,
+        // provided from the graphql schema as filter arguments
+        default:
+          switch (operation) {
+            case &apos;all&apos;:
+              // $all operator selects the documents, where the value of
+              // a field is an array
+              // that contains all the specified elements. To specify an
+              // $all expression
+              //         tags:   {  $all : [ &quot;ssl&quot; , &quot;security&quot;       ] }
+              //        field:   {  $all : [ &lt;value1&gt; , &lt;value2&gt; ...  ] }
+              query[fieldName] = { $all: buildFilterQuery(value) };
+              break;
+
+            case &apos;eq&apos;:
+              // $eq specifies equality condition. The $eq operator matches
+              // documents where the value of a field equals the specified value
+              // db.inventory.find( { qty: { $eq: 20 } } )
+              query[fieldName] = { $eq: buildFilterQuery(value) };
+              break;
+
+            case &apos;ne&apos;:
+              // $ne selects the documents where the value of the field is
+              // not equal (i.e. !=) to the specified value. This includes
+              // documents that do not contain the field.
+              //        field:   {  $ne : value                        }
+              query[fieldName] = { $ne: buildFilterQuery(value) };
+              break;
+
+            case &apos;in&apos;:
+              // $in operator selects the documents where the value of a
+              // field equals any value
+              // in the specified array.
+              // db.inventory.find( { qty: { $in: [ 5, 15 ] } } )
+              query[fieldName] = { $in: buildFilterQuery(value) };
+              break;
+
+            case &apos;nin&apos;:
+              // $nin selects the documents where:
+              //  * the field value is not in the specified array or
+              //  * the field does not exist.
+              // db.inventory.find( { qty: { $nin: [ 5, 15 ] } } )
+              query[fieldName] = { $nin: buildFilterQuery(value) };
+              break;
+
+            case &apos;lt&apos;:
+              // $lt selects the documents where the value of the field is less
+              // than (i.e. &lt;) the specified value.
+              // db.inventory.find( { qty: { $lt: 20 } } )
+              query[fieldName] = { $lt: buildFilterQuery(value) };
+              break;
+
+            case &apos;lte&apos;:
+              // $lte selects the documents where the value of the field
+              // is less than or equal to (i.e. &lt;=) the specified value.
+              // db.inventory.find( { qty: { $lte: 20 } } )
+              query[fieldName] = { $lte: buildFilterQuery(value) };
+              break;
+
+            case &apos;gt&apos;:
+              // $gt selects those documents where the value of the field
+              // is greater than (i.e. &gt;) the specified value.
+              // db.inventory.find( { qty: { $gt: 20 } } )
+              query[fieldName] = { $gt: buildFilterQuery(value) };
+              break;
+
+            case &apos;gte&apos;:
+              // $gte selects the documents where the value of the field
+              // is greater than or equal to (i.e. &gt;=) a specified value
+              // e.g. value.
+              // db.inventory.find( { qty: { $gte: 20 } } )
+              query[fieldName] = { $gte: buildFilterQuery(value) };
+              break;
+
+            case &apos;not&apos;:
+              // $not performs a logical NOT operation on the specified
+              //  &lt;operator-expression&gt; and selects the documents that
+              // do not match the &lt;operator-expression&gt;.
+              // This includes documents that do not contain the field.
+              // db.inventory.find( { price: { $not: { $gt: 1.99 } } } )
+
+              const subQuery = buildFilterQuery(value);
+              if (subQuery[fieldName]) {
+                query[fieldName] = { $not: subQuery[fieldName] };
+              } else {
+                // this shouldn&apos;t happen, but for safety reasons
+                query[fieldName] = { $not: buildFilterQuery(value) };
+              }
+              break;
+
+            case &apos;exists&apos;:
+              // Syntax: { field: { $exists: &lt;boolean&gt; } }
+              // When &lt;boolean&gt; is true, $exists matches the documents
+              // that contain the field, including documents where the
+              // field value is null.
+              // If &lt;boolean&gt; is false, the query returns only the documents
+              //  that do not contain the field.
+              query[fieldName] = { $exists: buildFilterQuery(value) };
+              break;
+
+            case &apos;type&apos;:
+              // $type selects the documents where the value of the field
+              // is an instance of the specified BSON type.
+              // Querying by data type is useful when dealing with
+              // highly unstructured data where data types are not predictable
+              // { field: { $type: &lt;BSON type number&gt; | &lt;String alias&gt; } }
+              // look for the type: enum BSONType
+              query[fieldName] = { $type: buildFilterQuery(value) };
+              break;
+
+            case &apos;not_in&apos;:
+              // $in operator selects the documents where the value of a
+              // field equals any value
+              // in the specified array. $not inverses
+              // db.inventory.find( { qty: { $in: [ 5, 15 ] } } )
+              query[fieldName] = { $nin: buildFilterQuery(value) };
+              break;
+
+            case &apos;regex&apos;:
+              // in schema defined graphql type:
+              // type regex {
+              //   regex: String
+              //   option: Enum (type option { global, multiline, ...})
+              // }
+              // so we need to map the options first to mongoDB regex options:
+              let options = &apos;&apos;;
+              if (value.options) {
+                value.options.forEach(option =&gt; {
+                  switch (option) {
+                    case &apos;global&apos;:
+                      options += &apos;g&apos;;
+                      break;
+                    case &apos;multiline&apos;:
+                      options += &apos;m&apos;;
+                      break;
+                    case &apos;insensitive&apos;:
+                      options += &apos;i&apos;;
+                      break;
+                    case &apos;sticky&apos;:
+                      options += &apos;y&apos;;
+                      break;
+                    case &apos;unicode&apos;:
+                      options += &apos;u&apos;;
+                      break;
+                  }
+                });
+              }
+
+              // assign it directly, as deeper structures aren&apos;t allowed here
+              query[fieldName] = {
+                $regex: value.regex,
+                $options: options
+              };
+              break;
+
+            case &apos;contains&apos;:
+              // the field contains this string
+              query[fieldName] = {
+                $regex: buildFilterQuery(value)
+              };
+              break;
+
+            case &apos;starts_with&apos;:
+              // the field starts with this string
+              query[fieldName] = {
+                $regex: `^${buildFilterQuery(value)}`,
+                $options: &apos;m&apos;
+              };
+              break;
+
+            case &apos;ends_with&apos;:
+              // the field ends with this string
+              query[fieldName] = {
+                $regex: `${buildFilterQuery(value)}$`,
+                $options: &apos;m&apos;
+              };
+              break;
+
+            case &apos;not_contains&apos;:
+              // the field does not contain this string
+              query[fieldName] = {
+                $regex: `^(?!.*${buildFilterQuery(value)})`,
+                $options: &apos;m&apos;
+              };
+              break;
+
+            case &apos;not_starts_with&apos;:
+              // the field ends not with this string
+              query[fieldName] = {
+                $regex: `^(?!${buildFilterQuery(value)})`,
+                $options: &apos;m&apos;
+              };
+              break;
+
+            case &apos;not_ends_with&apos;:
+              // // the field ends with this string
+              // query[fieldName] = {
+              //   $regex: `(?!${buildFilterQuery(value)})$`,
+              //   $options: &apos;m&apos;
+              // };
+              // the field ends with this string case-in-sensitive
+              // it is called &quot;negated or negative lookbehind&quot; .*(?&lt;!xyz)$
+              // Javascript isn&apos;t supporting this today
+              // so have to use a complicated look ahead pattern instead
+              query[fieldName] = {
+                $regex: `^(?!.*${buildFilterQuery(value)}$).*$`,
+                $options: &apos;gm&apos;
+              };
+              break;
+
+            case &apos;contains_ci&apos;:
+              // the field contains this string case-in-sensitive
+              query[fieldName] = {
+                $regex: buildFilterQuery(value),
+                $options: &apos;im&apos;
+              };
+              break;
+
+            case &apos;starts_with_ci&apos;:
+              // the field starts with this string case-in-sensitive
+              query[fieldName] = {
+                $regex: `^${buildFilterQuery(value)}`,
+                $options: &apos;im&apos;
+              };
+              break;
+
+            case &apos;ends_with_ci&apos;:
+              // the field ends with this string case-in-sensitive
+              query[fieldName] = {
+                $regex: `${buildFilterQuery(value)}$`,
+                $options: &apos;im&apos;
+              };
+              break;
+
+            case &apos;not_contains_ci&apos;:
+              // the field does not contain this string case-in-sensitive
+              query[fieldName] = {
+                $regex: `^(?!.*${buildFilterQuery(value)})`,
+                $options: &apos;im&apos;
+              };
+              break;
+
+            case &apos;not_starts_with_ci&apos;:
+              // the field starts with this string case-in-sensitive
+              query[fieldName] = {
+                // $not: {
+                $regex: `^(?!${buildFilterQuery(value)})`,
+                $options: &apos;im&apos;
+                // }
+              };
+              break;
+
+            case &apos;not_ends_with_ci&apos;:
+              // the field ends with this string case-in-sensitive
+              // it is called &quot;negated or negative lookbehind&quot; .*(?&lt;!xyz)$
+              // Javascript isn&apos;t supporting this today
+              // so have to use a complicated look ahead pattern instead
+              query[fieldName] = {
+                $regex: `^(?!.*${buildFilterQuery(value)}$).*$`,
+                $options: &apos;gim&apos;
+              };
+              break;
+          }
+      }
+    });
+  }
+
+  return query;
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.1)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
