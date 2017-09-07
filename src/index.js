@@ -20,4 +20,3 @@ export { buildRequiredTypes, enhanceSchemaWithQueryArguments } from './schema';
 
 // to provide the testCases to be used in create-graphql-server
 export { testCases } from './test-cases';
-export { suite } from './index-test-cases';
