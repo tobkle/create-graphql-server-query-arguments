@@ -1,0 +1,2150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/test-cases.js | create-graphql-server-authorization</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Adds authorization to create-graphql-server"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="create-graphql-server-authorization"><meta property="twitter:description" content="Adds authorization to create-graphql-server"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/tobkle/create-graphql-server-authorization"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getToken">getToken</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sendQuery">sendQuery</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sendQueryAndExpect">sendQueryAndExpect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ASC">ASC</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BOOLEAN">BOOLEAN</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BSON_TYPE">BSON_TYPE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DEFAULT_LIMIT">DEFAULT_LIMIT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DEFAULT_SKIP">DEFAULT_SKIP</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DEFAULT_SORT">DEFAULT_SORT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DESC">DESC</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ENCODING">ENCODING</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ENUM">ENUM</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-FLOAT">FLOAT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-INT">INT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-QUERY">QUERY</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-REGEX">REGEX</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SRC_DIR">SRC_DIR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STRING">STRING</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TEST_DIR">TEST_DIR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TEST_EXPECTED">TEST_EXPECTED</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TEST_GENERATED">TEST_GENERATED</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TEST_GQL_DATA">TEST_GQL_DATA</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TEST_GQL_EXTENSION">TEST_GQL_EXTENSION</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-suite">suite</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modulePath">modulePath</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-adminUser">adminUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultUser">defaultUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-roleUser">roleUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-unknownUser">unknownUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-testCases">testCases</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#model">model</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildBaseQuery">buildBaseQuery</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildFilterQuery">buildFilterQuery</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildLimit">buildLimit</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildSkip">buildSkip</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildSortQuery">buildSortQuery</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepareQueries">prepareQueries</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#schema">schema</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildRequiredTypes">buildRequiredTypes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-enhanceSchemaWithQueryArguments">enhanceSchemaWithQueryArguments</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-requiredTypes">requiredTypes</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#util">util</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-lcFirst">lcFirst</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ucFirst">ucFirst</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addPaginationArguments">addPaginationArguments</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-applyCustomDirectives">applyCustomDirectives</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-argumentsToObject">argumentsToObject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildArgument">buildArgument</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildField">buildField</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildName">buildName</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildTypeDefinition">buildTypeDefinition</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildTypeExtension">buildTypeExtension</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildTypeReference">buildTypeReference</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildValue">buildValue</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getBaseType">getBaseType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getType">getType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-idArgument">idArgument</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isScalarField">isScalarField</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readInput">readInput</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readString">readString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-templateToAst">templateToAst</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SCALAR_TYPE_NAMES">SCALAR_TYPE_NAMES</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/test-cases.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
+/* eslint-disable max-len */
+
+import {
+  unknownUser, // not signed in
+  defaultUser, // role = &apos;user&apos;
+  roleUser, // role = &apos;editor&apos;
+  adminUser // role = &apos;admin&apos;
+} from &apos;./sendQuery&apos;;
+
+export const testCases = [
+  // tweets(filter: {AND: [{id: &quot;583676d3618530145474e351&quot;}, {createdAt: 1479964352544}]})
+  {
+    name:
+      &apos;tweets(filter: {AND: [{id: &quot;583676d3618530145474e351&quot;}, {createdAt: 1479964352544}]})&apos;,
+    image: &apos;001-query-AND.png&apos;,
+    user: unknownUser,
+    query: `
+      {
+        tweets(filter: {AND: [{id: &quot;583676d3618530145474e351&quot;}, {createdAt: 1479964352544}]}) {
+          id
+          body
+          createdAt
+        }
+      }
+    `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {NOR: [{id: &quot;583676d3618530145474e351&quot;}, {createdAt: 1479964438372}]})
+  {
+    name:
+      &apos;tweets(filter: {NOR: [{id: &quot;583676d3618530145474e351&quot;}, {createdAt: 1479964438372}]})&apos;,
+    image: &apos;002-query-NOR.png&apos;,
+    user: defaultUser,
+    query: `
+        {
+          tweets(filter: {NOR: [{id: &quot;583676d3618530145474e351&quot;}, {createdAt: 1479964438372}]}) {
+            id
+            body
+            createdAt
+          }
+        }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {OR: [{id: &quot;583676d3618530145474e351&quot;}, {createdAt: 1479964438372}]})
+  {
+    name:
+      &apos;tweets(filter: {OR: [{id: &quot;583676d3618530145474e351&quot;}, {createdAt: 1479964438372}]})&apos;,
+    image: &apos;003-query-OR.png&apos;,
+    user: adminUser,
+    query: `
+        {
+          tweets(filter: {OR: [{id: &quot;583676d3618530145474e351&quot;}, {createdAt: 1479964438372}]}) {
+            id
+            body
+            createdAt
+          }
+        }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {id: &quot;583676d3618530145474e351&quot;}) better: use tweet (singular) instead for &quot;id&quot;, it does caching
+  {
+    name:
+      &apos;tweets(filter: {id: &quot;583676d3618530145474e351&quot;}) better: use tweet (singular) instead for &quot;id&quot;, it does caching&apos;,
+    image: &apos;004-query-fieldname-id.png&apos;,
+    user: roleUser,
+    query: `
+        {
+          tweets(filter: {id: &quot;583676d3618530145474e351&quot;}) {
+            id
+            body
+            createdAt
+          }
+        }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {createdAt: 1479964438372})
+  {
+    name: &apos;tweets(filter: {createdAt: 1479964438372})&apos;,
+    image: &apos;004-query-fieldname-integer.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {createdAt: 1479964438372}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // ALL: TODO: missing data)
+  // {
+  //   name: &apos;tweets(filter: {createdAt: 1479964438372})&apos;,
+  //   image: &apos;004-query-fieldname.png&apos;,
+  //   user: roleUser,
+  //   query: `
+  //     {
+  //       tweets(filter: {createdAt: 1479964438372}) {
+  //         id
+  //         body
+  //         createdAt
+  //       }
+  //     }
+  //     `,
+  //   expectedResult: {
+  //     tweets: [
+  //       {
+  //         id: &apos;583676d3618530145474e355&apos;,
+  //         body: &apos;Where have I heard this before&apos;,
+  //         createdAt: 1479964438372
+  //       }
+  //     ]
+  //   }
+  // },
+
+  // tweets(filter: {id_eq: &quot;583676d3618530145474e350&quot; })
+  {
+    name: &apos;tweets(filter: {id_eq: &quot;583676d3618530145474e350&quot; }) &apos;,
+    image: &apos;006-query-fieldname_eq.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {id_eq: &quot;583676d3618530145474e350&quot; })  {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {id_ne: &quot;583676d3618530145474e350&quot; })
+  {
+    name: &apos;tweets(filter: {id_ne: &quot;583676d3618530145474e350&quot; })&apos;,
+    image: &apos;007-query-fieldname_ne.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {id_ne: &quot;583676d3618530145474e350&quot; })  {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {createdAt: 1479964438372})
+  {
+    name: &apos;tweets(filter: {id_eq: &quot;583676d3618530145474e350&quot; }) &apos;,
+    image: &apos;006-query-fieldname_eq.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {id_eq: &quot;583676d3618530145474e350&quot; })  {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {id_in: [&quot;583676d3618530145474e350&quot;, &quot;583676d3618530145474e354&quot;]})
+  {
+    name:
+      &apos;tweets(filter: {id_in: [&quot;583676d3618530145474e350&quot;, &quot;583676d3618530145474e354&quot;]})&apos;,
+    image: &apos;008-query-fieldname_in.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {id_in: [&quot;583676d3618530145474e350&quot;, &quot;583676d3618530145474e354&quot;]})  {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {id_nin: [&quot;583676d3618530145474e350&quot;, &quot;583676d3618530145474e354&quot;]})
+  {
+    name:
+      &apos;tweets(filter: {id_nin: [&quot;583676d3618530145474e350&quot;, &quot;583676d3618530145474e354&quot;]})&apos;,
+    image: &apos;009-query-fieldname_nin.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {id_nin: [&quot;583676d3618530145474e350&quot;, &quot;583676d3618530145474e354&quot;]})  {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {createdAt_lt: 1479964386822})
+  {
+    name: &apos;tweets(filter: {createdAt_lt: 1479964386822})&apos;,
+    image: &apos;010-query-fieldname_lt.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {createdAt_lt: 1479964386822})  {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {createdAt_lte: 1479964386822})
+  {
+    name: &apos;tweets(filter: {createdAt_lte: 1479964386822})&apos;,
+    image: &apos;011-query-fieldname_lte.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {createdAt_lte: 1479964386822})  {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {createdAt_lte: 1479964386822})
+  {
+    name: &apos;tweets(filter: {createdAt_gt: 1479964386822})&apos;,
+    image: &apos;012-query-fieldname_gt.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {createdAt_gt: 1479964386822})  {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {createdAt_gte: 1479964386822})
+  {
+    name: &apos;tweets(filter: {createdAt_gte: 1479964386822}) &apos;,
+    image: &apos;013-query-fieldname_gte.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {createdAt_gte: 1479964386822})  {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_not: {body_eq: &quot;Where have I heard this before&quot;} })
+  {
+    name:
+      &apos;tweets(filter: {body_not: {body_eq: &quot;Where have I heard this before&quot;} })  &apos;,
+    image: &apos;014-query-fieldname_not.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_not: {body_eq: &quot;Where have I heard this before&quot;} })  {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_exists: true })
+  {
+    name: &apos;tweets(filter: {body_exists: true })   &apos;,
+    image: &apos;015-query-fieldname_exists.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_exists: true })  {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_exists: false })
+  {
+    name: &apos;tweets(filter: {body_exists: false })   &apos;,
+    image: &apos;015-query-fieldname_exists.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_exists: false })  {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: []
+    }
+  },
+
+  // tweets(filter: {body_type: string })
+  {
+    name: &apos;tweets(filter: {body_type: string })   &apos;,
+    image: &apos;017-query-fieldname_type-string.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_type: string })  {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_type: int })
+  {
+    name: &apos;tweets(filter: {body_type: int })   &apos;,
+    image: &apos;018-query-fieldname_type-int.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_type: int })  {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: []
+    }
+  },
+
+  // tweets(filter: {id_not_in: [&quot;583676d3618530145474e350&quot;, &quot;583676d3618530145474e351&quot;] })
+  {
+    name:
+      &apos;tweets(filter: {id_not_in: [&quot;583676d3618530145474e350&quot;, &quot;583676d3618530145474e351&quot;] })    &apos;,
+    image: &apos;019-query-fieldname_not_in.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {id_not_in: [&quot;583676d3618530145474e350&quot;, &quot;583676d3618530145474e351&quot;] })  {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;}})
+  {
+    name:
+      &apos;tweets(filter: {id_not_in: [&quot;583676d3618530145474e350&quot;, &quot;583676d3618530145474e351&quot;] })    &apos;,
+    image: &apos;020-query-regex-without-options.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;}})  {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: global}})
+  {
+    name:
+      &apos;tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: global}})   &apos;,
+    image: &apos;021-query-regex-global.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: global}}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: multiline}})
+  {
+    name:
+      &apos;tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: multiline}})&apos;,
+    image: &apos;022-query-regex-multiline.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: multiline}}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: insensitive}})
+  {
+    name:
+      &apos;tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: insensitive}})&apos;,
+    image: &apos;023-query-regex-insensitive.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: insensitive}}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: insensitive}})
+  {
+    name:
+      &apos;tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: sticky}})&apos;,
+    image: &apos;024-query-regex-sticky.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: sticky}}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: unicode}})
+  {
+    name:
+      &apos;tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: unicode}}) &apos;,
+    image: &apos;025-query-regex-unicode.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: unicode}}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: [global, multiline, unicode]}})
+  {
+    name:
+      &apos;tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: [global, multiline, unicode]}})  &apos;,
+    image: &apos;026-query-regex-multi-options.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_regex: {regex: &quot;presidential politics&quot;, options: [global, multiline, unicode]}}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_regex: {regex: &quot;^It&quot;, options: [global, multiline, unicode]}})
+  {
+    name:
+      &apos;tweets(filter: {body_regex: {regex: &quot;^It&quot;, options: [global, multiline, unicode]}}) // starts with...&apos;,
+    image: &apos;027-query-regex-starts-with.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_regex: {regex: &quot;^It&quot;, options: [global, multiline, unicode]}}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_regex: {regex: &quot;^It&quot;, options: [global, multiline, unicode]}})
+  {
+    name:
+      &apos;tweets(filter: {body_regex: {regex: &quot;turn.$&quot;, options: [global, multiline, unicode]}}) // ends with...&apos;,
+    image: &apos;028-query-regex-ends-with.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_regex: {regex: &quot;turn.$&quot;, options: [global, multiline, unicode]}}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_regex: {regex: &quot;It$&quot;, options: [global, multiline, unicode]}})
+  {
+    name:
+      &apos;tweets(filter: {body_regex: {regex: &quot;It$&quot;, options: [global, multiline, unicode]}}) // should be empty&apos;,
+    image: &apos;029-query-regex-ends-with-fail.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_regex: {regex: &quot;It$&quot;, options: [global, multiline, unicode]}}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: []
+    }
+  },
+
+  // tweets(filter: {body_regex: {regex: &quot;It$&quot;, options: [global, multiline, unicode]}})
+  {
+    name:
+      &apos;tweets(filter: {body_regex: {regex: &quot;^presi&quot;, options: [global, multiline, unicode]}}) // should be empty.&apos;,
+    image: &apos;030-query-regex-starts-with-fail.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_regex: {regex: &quot;^presi&quot;, options: [global, multiline, unicode]}}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: []
+    }
+  },
+
+  // tweets(filter: {body_regex: {regex: &quot;PRESI&quot;, options: [global, multiline, unicode]}})
+  {
+    name:
+      &apos;tweets(filter: {body_regex: {regex: &quot;PRESI&quot;, options: [global, multiline, unicode]}})  // should be empty.&apos;,
+    image: &apos;031-query-regex-sensitive.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_regex: {regex: &quot;PRESI&quot;, options: [global, multiline, unicode]}}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: []
+    }
+  },
+
+  // tweets(filter: {body_regex: {regex: &quot;PRESI&quot;, options: [insensitive, multiline, unicode]}})
+  {
+    name:
+      &apos;tweets(filter: {body_regex: {regex: &quot;PRESI&quot;, options: [insensitive, multiline, unicode]}}) // finds one.&apos;,
+    image: &apos;032-query-regex-insensitive.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_regex: {regex: &quot;PRESI&quot;, options: [insensitive, multiline, unicode]}}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_contains: &quot;presi&quot;})
+  {
+    name: &apos;tweets(filter: {body_contains: &quot;presi&quot;}) // finds one.&apos;,
+    image: &apos;033-query-fieldname_contains.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_contains: &quot;presi&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_contains: &quot;Presi&quot;}) // finds none.
+  {
+    name: &apos;tweets(filter: {body_contains: &quot;Presi&quot;}) // finds none.&apos;,
+    image: &apos;034-query-fieldname_contains-fails.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_contains: &quot;Presi&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: []
+    }
+  },
+
+  // tweets(filter: {body_starts_with: &quot;It&quot;})
+  {
+    name: &apos;tweets(filter: {body_starts_with: &quot;It&quot;})&apos;,
+    image: &apos;035-query-fieldname_starts_with.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_starts_with: &quot;It&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_starts_with: &quot;turn&quot;}) // fails
+  {
+    name: &apos;tweets(filter: {body_starts_with: &quot;turn&quot;}) // fails&apos;,
+    image: &apos;036-query-fieldname_starts_with-fails.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_starts_with: &quot;turn&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: []
+    }
+  },
+
+  // tweets(filter: {body_ends_with: &quot;turn.&quot;})
+  {
+    name: &apos;tweets(filter: {body_ends_with: &quot;turn.&quot;})&apos;,
+    image: &apos;037-query-fieldname_ends_with.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_ends_with: &quot;turn.&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_ends_with: &quot;It&quot;}) // fails
+  {
+    name: &apos;tweets(filter: {body_ends_with: &quot;It&quot;}) // fails&apos;,
+    image: &apos;038-query-fieldname_ends_with-fails.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_ends_with: &quot;It&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: []
+    }
+  },
+
+  //  tweets(filter: {body_not_contains: &quot;presi&quot;})
+  {
+    name: &apos;tweets(filter: {body_not_contains: &quot;presi&quot;})&apos;,
+    image: &apos;039-query-fieldname_not_contains.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_not_contains: &quot;presi&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_not_starts_with: &quot;Good times&quot;})
+  {
+    name: &apos;tweets(filter: {body_not_starts_with: &quot;Good times&quot;})&apos;,
+    image: &apos;040-query-fieldname_not_starts_with.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_not_starts_with: &quot;Good times&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_not_ends_with: &quot;fast:&quot;})
+  {
+    name: &apos;tweets(filter: {body_not_ends_with: &quot;fast:&quot;}) &apos;,
+    image: &apos;041-query-fieldname_not_ends_with.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_not_ends_with: &quot;fast:&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_contains_ci: &quot;PrEsI&quot;})
+  {
+    name: &apos;tweets(filter: {body_contains_ci: &quot;PrEsI&quot;}) &apos;,
+    image: &apos;042-query-fieldname_contains_ci.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_contains_ci: &quot;PrEsI&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_starts_with_ci: &quot;iT WiLl&quot;})
+  {
+    name: &apos;tweets(filter: {body_starts_with_ci: &quot;iT WiLl&quot;}) &apos;,
+    image: &apos;043-query-fieldname_starts_with_ci.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_starts_with_ci: &quot;iT WiLl&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_starts_with_ci: &quot;TURN.&quot;}) fails
+  {
+    name: &apos;tweets(filter: {body_starts_with_ci: &quot;TURN.&quot;}) // fails&apos;,
+    image: &apos;044-query-fieldname_starts_with_ci-fails.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_starts_with_ci: &quot;TURN.&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: []
+    }
+  },
+
+  // tweets(filter: {body_ends_with_ci: &quot;TURN.&quot;})
+  {
+    name: &apos;tweets(filter: {body_ends_with_ci: &quot;TURN.&quot;})&apos;,
+    image: &apos;045-query-fieldname_ends_with_ci.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_ends_with_ci: &quot;TURN.&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_ends_with_ci: &quot;iT WiLl&quot;}) // fails
+  {
+    name: &apos;tweets(filter: {body_ends_with_ci: &quot;iT WiLl&quot;}) // fails&apos;,
+    image: &apos;046-query-fieldname_ends_with_ci-fails.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_ends_with_ci: &quot;iT WiLl&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: []
+    }
+  },
+
+  // tweets(filter: {body_not_contains_ci: &quot;WiLl&quot;})
+  {
+    name: &apos;tweets(filter: {body_not_contains_ci: &quot;WiLl&quot;})&apos;,
+    image: &apos;046-query-fieldname_ends_with_ci-fails.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_not_contains_ci: &quot;WiLl&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_not_contains_ci: &quot;zeta&quot;})
+  {
+    name: &apos;tweets(filter: {body_not_contains_ci: &quot;zeta&quot;})&apos;,
+    image: &apos;047-query-fieldname_ends_with_ci-no-pattern.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_not_contains_ci: &quot;zeta&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_not_starts_with_ci: &quot;iT WiLl&quot;})
+  {
+    name: &apos;tweets(filter: {body_not_starts_with_ci: &quot;iT WiLl&quot;})&apos;,
+    image: &apos;049-query-fieldname_not_starts_with_ci.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_not_starts_with_ci: &quot;iT WiLl&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_not_starts_with_ci: &quot;TURN.&quot;})
+  {
+    name: &apos;tweets(filter: {body_not_starts_with_ci: &quot;TURN.&quot;}) &apos;,
+    image: &apos;050-query-fieldname_not_starts_with_ci-turn.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_not_starts_with_ci: &quot;TURN.&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_not_ends_with_ci: &quot;TURN.&quot;})
+  {
+    name: &apos;tweets(filter: {body_not_ends_with_ci: &quot;TURN.&quot;})&apos;,
+    image: &apos;051-query-fieldname_not_ends_with_ci.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_not_ends_with_ci: &quot;TURN.&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_not_ends_with_ci: &quot;good&quot;})
+  {
+    name: &apos;tweets(filter: {body_not_ends_with_ci: &quot;good&quot;})&apos;,
+    image: &apos;052-query-fieldname_not_ends_with_ci-good.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_not_ends_with_ci: &quot;good&quot;}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_not_ends_with_ci: &quot;good&quot;}, orderBy: {sort: createdAt, direction: ASC})
+  {
+    name:
+      &apos;tweets(filter: {body_not_ends_with_ci: &quot;good&quot;}, orderBy: {sort: createdAt, direction: ASC})&apos;,
+    image: &apos;053-query-fieldname_not_ends_with_ci-orderBy_createdAt_ASC.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_not_ends_with_ci: &quot;good&quot;}, orderBy: {sort: createdAt, direction: ASC}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_not_ends_with_ci: &quot;good&quot;}, orderBy: {sort: createdAt, direction: DESC})
+  {
+    name:
+      &apos;tweets(filter: {body_not_ends_with_ci: &quot;good&quot;}, orderBy: {sort: createdAt, direction: DESC})&apos;,
+    image: &apos;054-query-fieldname_not_ends_with_ci-orderBy_createdAt_DESC.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_not_ends_with_ci: &quot;good&quot;}, orderBy: {sort: createdAt, direction: DESC}) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        },
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        }
+      ]
+    }
+  },
+
+  // tweets(filter: {body_not_ends_with_ci: &quot;good&quot;}, orderBy: [{sort: body, direction: ASC}, {sort: createdAt, direction: DESC}])
+  {
+    name:
+      &apos;tweets(filter: {body_not_ends_with_ci: &quot;good&quot;}, orderBy: [{sort: body, direction: ASC}, {sort: createdAt, direction: DESC}])&apos;,
+    image: &apos;055-query-multiple-sort.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(filter: {body_not_ends_with_ci: &quot;good&quot;}, orderBy: [{sort: body, direction: ASC}, {sort: createdAt, direction: DESC}]) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        },
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        },
+        {
+          id: &apos;583676d3618530145474e352&apos;,
+          body:
+            &apos;We put our hearts into this talk about a #GraphQL-first workflow and how it helped us build apps fast:&apos;,
+          createdAt: 1479964371334
+        },
+        {
+          id: &apos;583676d3618530145474e355&apos;,
+          body: &apos;Where have I heard this before&apos;,
+          createdAt: 1479964438372
+        }
+      ]
+    }
+  },
+
+  // tweets(limit: 2, filter: {body_not_ends_with_ci: &quot;good&quot;}, orderBy: [{sort: body, direction: ASC}, {sort: createdAt, direction: DESC}])
+  {
+    name:
+      &apos;tweets(limit: 2, filter: {body_not_ends_with_ci: &quot;good&quot;}, orderBy: [{sort: body, direction: ASC}, {sort: createdAt, direction: DESC}])&apos;,
+    image: &apos;056-query-limit-2-multiple-sort.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(limit: 2, filter: {body_not_ends_with_ci: &quot;good&quot;}, orderBy: [{sort: body, direction: ASC}, {sort: createdAt, direction: DESC}]) {
+          id
+          body
+          createdAt
+        }
+      }
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e350&apos;,
+          body:
+            &apos;A #graphql-first development workflow based on real world lessons, from @danimman &amp; @stubailo:&apos;,
+          createdAt: 1479964340853
+        },
+        {
+          id: &apos;583676d3618530145474e351&apos;,
+          body:
+            &apos;Good times bringing Apollo Optics to Rails over the last few months with @tmeasday @chollier @cjoudrey @rmosolgo and others!&apos;,
+          createdAt: 1479964352544
+        }
+      ]
+    }
+  },
+
+  // tweets(skip: 2, limit: 2, filter: {body_not_ends_with_ci: &quot;good&quot;}, orderBy: [{sort: body, direction: ASC}, {sort: createdAt, direction: DESC}])
+  {
+    name:
+      &apos;tweets(skip: 2, limit: 2, filter: {body_not_ends_with_ci: &quot;good&quot;}, orderBy: [{sort: body, direction: ASC}, {sort: createdAt, direction: DESC}])&apos;,
+    image: &apos;056-query-limit-2-multiple-sort.png&apos;,
+    user: roleUser,
+    query: `
+      {
+        tweets(skip: 2, limit: 2, filter: {body_not_ends_with_ci: &quot;good&quot;}, orderBy: [{sort: body, direction: ASC}, {sort: createdAt, direction: DESC}]) {
+          id
+          body
+          createdAt
+        }
+      }
+
+      `,
+    expectedResult: {
+      tweets: [
+        {
+          id: &apos;583676d3618530145474e353&apos;,
+          body:
+            &apos;Help improve @apollographql integration with #redux dev tools:&apos;,
+          createdAt: 1479964386822
+        },
+        {
+          id: &apos;583676d3618530145474e354&apos;,
+          body:
+            &quot;It will stop being insane. It will just be normal. TV changed presidential politics, now it&apos;s social media&apos;s turn.&quot;,
+          createdAt: 1479964423351
+        }
+      ]
+    }
+  }
+];
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.1)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

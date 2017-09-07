@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "name": "getToken",
+    "filePath": "src/sendQuery.js",
+    "lines": [
+      {
+        "lineNumber": 11,
+        "line": "export const adminUser = '583291a1638566b3c5a92ca1'; // role = 'admin'"
+      },
+      {
+        "lineNumber": 12,
+        "line": ""
+      },
+      {
+        "lineNumber": 13,
+        "line": "export function getToken("
+      }
+    ],
+    "codeParams": [
+      "userId",
+      "KEY"
+    ],
+    "docParams": [
+      "userId",
+      "undefined"
+    ]
+  }
+]

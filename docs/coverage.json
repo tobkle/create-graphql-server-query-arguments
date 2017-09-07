@@ -1,7 +1,7 @@
 {
-  "coverage": "62.71%",
-  "expectCount": 59,
-  "actualCount": 37,
+  "coverage": "57.14%",
+  "expectCount": 70,
+  "actualCount": 40,
   "files": {
     "src/constants.js": {
       "expectCount": 20,
@@ -27,6 +27,13 @@
         26,
         27,
         28
+      ]
+    },
+    "src/index-test-cases.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        8
       ]
     },
     "src/index.js": {
@@ -73,6 +80,31 @@
       "expectCount": 10,
       "actualCount": 10,
       "undocumentLines": []
+    },
+    "src/schema/requiredTypes.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/sendQuery.js": {
+      "expectCount": 8,
+      "actualCount": 3,
+      "undocumentLines": [
+        6,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "src/test-cases.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        11
+      ]
     },
     "src/util/capitalization.js": {
       "expectCount": 2,

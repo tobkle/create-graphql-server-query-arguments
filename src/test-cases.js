@@ -645,7 +645,7 @@ export const testCases = [
 
   // tweets(filter: {body_type: string })
   {
-    name: 'tweets(filter: {body_exists: false })   ',
+    name: 'tweets(filter: {body_type: string })   ',
     image: '017-query-fieldname_type-string.png',
     user: roleUser,
     query: `
@@ -1857,10 +1857,10 @@ export const testCases = [
     }
   },
 
-  // tweets(filter: {body_not_ends_with_ci: "good"}, orderBy: {sort: createdAt, direction: ASC})
+  // tweets(filter: {body_not_ends_with_ci: "good"}, orderBy: {sort: createdAt, direction: DESC})
   {
     name:
-      'tweets(filter: {body_not_ends_with_ci: "good"}, orderBy: {sort: createdAt, direction: ASC})',
+      'tweets(filter: {body_not_ends_with_ci: "good"}, orderBy: {sort: createdAt, direction: DESC})',
     image: '054-query-fieldname_not_ends_with_ci-orderBy_createdAt_DESC.png',
     user: roleUser,
     query: `

@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 472,
+  "end": 523,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 15,
+      "line": 17,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 472,
+    "end": 523,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 15,
+        "line": 17,
         "column": 0
       }
     },
@@ -30,169 +30,135 @@
     "body": [
       {
         "type": "ImportDeclaration",
-        "start": 0,
-        "end": 42,
+        "start": 75,
+        "end": 123,
         "loc": {
           "start": {
-            "line": 1,
+            "line": 4,
             "column": 0
           },
           "end": {
-            "line": 1,
-            "column": 42
+            "line": 4,
+            "column": 48
           }
         },
         "specifiers": [
           {
             "type": "ImportSpecifier",
-            "start": 9,
-            "end": 19,
+            "start": 84,
+            "end": 97,
             "loc": {
               "start": {
-                "line": 1,
+                "line": 4,
                 "column": 9
               },
               "end": {
-                "line": 1,
-                "column": 19
+                "line": 4,
+                "column": 22
               }
             },
             "imported": {
               "type": "Identifier",
-              "start": 9,
-              "end": 19,
+              "start": 84,
+              "end": 97,
               "loc": {
                 "start": {
-                  "line": 1,
+                  "line": 4,
                   "column": 9
                 },
                 "end": {
-                  "line": 1,
-                  "column": 19
+                  "line": 4,
+                  "column": 22
                 },
-                "identifierName": "readString"
+                "identifierName": "requiredTypes"
               },
-              "name": "readString"
+              "name": "requiredTypes",
+              "leadingComments": null
             },
             "local": {
               "type": "Identifier",
-              "start": 9,
-              "end": 19,
+              "start": 84,
+              "end": 97,
               "loc": {
                 "start": {
-                  "line": 1,
+                  "line": 4,
                   "column": 9
                 },
                 "end": {
-                  "line": 1,
-                  "column": 19
+                  "line": 4,
+                  "column": 22
                 },
-                "identifierName": "readString"
+                "identifierName": "requiredTypes"
               },
-              "name": "readString"
-            }
+              "name": "requiredTypes"
+            },
+            "leadingComments": null
           }
         ],
         "importKind": "value",
         "source": {
           "type": "StringLiteral",
-          "start": 27,
-          "end": 41,
+          "start": 105,
+          "end": 122,
           "loc": {
             "start": {
-              "line": 1,
-              "column": 27
+              "line": 4,
+              "column": 30
             },
             "end": {
-              "line": 1,
-              "column": 41
+              "line": 4,
+              "column": 47
             }
           },
           "extra": {
-            "rawValue": "../util/read",
-            "raw": "'../util/read'"
+            "rawValue": "./requiredTypes",
+            "raw": "'./requiredTypes'"
           },
-          "value": "../util/read"
-        }
-      },
-      {
-        "type": "ImportDeclaration",
-        "start": 43,
-        "end": 67,
-        "loc": {
-          "start": {
-            "line": 2,
-            "column": 0
-          },
-          "end": {
-            "line": 2,
-            "column": 24
-          }
+          "value": "./requiredTypes"
         },
-        "specifiers": [
+        "leadingComments": [
           {
-            "type": "ImportDefaultSpecifier",
-            "start": 50,
-            "end": 54,
+            "type": "CommentLine",
+            "value": " import { readString } from '../util/read';",
+            "start": 0,
+            "end": 45,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 0
+              },
+              "end": {
+                "line": 1,
+                "column": 45
+              }
+            }
+          },
+          {
+            "type": "CommentLine",
+            "value": " import path from 'path';",
+            "start": 46,
+            "end": 73,
             "loc": {
               "start": {
                 "line": 2,
-                "column": 7
+                "column": 0
               },
               "end": {
                 "line": 2,
-                "column": 11
+                "column": 27
               }
-            },
-            "local": {
-              "type": "Identifier",
-              "start": 50,
-              "end": 54,
-              "loc": {
-                "start": {
-                  "line": 2,
-                  "column": 7
-                },
-                "end": {
-                  "line": 2,
-                  "column": 11
-                },
-                "identifierName": "path"
-              },
-              "name": "path"
             }
           }
         ],
-        "importKind": "value",
-        "source": {
-          "type": "StringLiteral",
-          "start": 60,
-          "end": 66,
-          "loc": {
-            "start": {
-              "line": 2,
-              "column": 17
-            },
-            "end": {
-              "line": 2,
-              "column": 23
-            }
-          },
-          "extra": {
-            "rawValue": "path",
-            "raw": "'path'"
-          },
-          "value": "path"
-        },
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * reads and graphql file and returns it as a string\n * @param {string} pathToFile - the path of the required \n *   types .graphql file (default)\n * @return {string} requiredTypes - schema containing the required types\n ",
-            "start": 69,
-            "end": 295,
+            "value": "*\n * reads and graphql file and returns it as a string\n * @return {string} requiredTypes - schema containing the required types\n ",
+            "start": 125,
+            "end": 258,
             "loc": {
               "start": {
-                "line": 4,
+                "line": 6,
                 "column": 0
               },
               "end": {
@@ -205,15 +171,15 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 297,
-        "end": 471,
+        "start": 260,
+        "end": 522,
         "loc": {
           "start": {
             "line": 11,
             "column": 0
           },
           "end": {
-            "line": 14,
+            "line": 16,
             "column": 1
           }
         },
@@ -221,22 +187,22 @@
         "source": null,
         "declaration": {
           "type": "FunctionDeclaration",
-          "start": 304,
-          "end": 471,
+          "start": 267,
+          "end": 522,
           "loc": {
             "start": {
               "line": 11,
               "column": 7
             },
             "end": {
-              "line": 14,
+              "line": 16,
               "column": 1
             }
           },
           "id": {
             "type": "Identifier",
-            "start": 313,
-            "end": 331,
+            "start": 276,
+            "end": 294,
             "loc": {
               "start": {
                 "line": 11,
@@ -254,352 +220,134 @@
           "generator": false,
           "expression": false,
           "async": false,
-          "params": [
-            {
-              "type": "Identifier",
-              "start": 332,
-              "end": 350,
-              "loc": {
-                "start": {
-                  "line": 11,
-                  "column": 35
-                },
-                "end": {
-                  "line": 11,
-                  "column": 53
-                },
-                "identifierName": "pathToFile"
-              },
-              "name": "pathToFile",
-              "typeAnnotation": {
-                "type": "TypeAnnotation",
-                "start": 342,
-                "end": 350,
-                "loc": {
-                  "start": {
-                    "line": 11,
-                    "column": 45
-                  },
-                  "end": {
-                    "line": 11,
-                    "column": 53
-                  }
-                },
-                "typeAnnotation": {
-                  "type": "StringTypeAnnotation",
-                  "start": 344,
-                  "end": 350,
-                  "loc": {
-                    "start": {
-                      "line": 11,
-                      "column": 47
-                    },
-                    "end": {
-                      "line": 11,
-                      "column": 53
-                    }
-                  }
-                }
-              }
-            }
-          ],
+          "params": [],
           "returnType": {
             "type": "TypeAnnotation",
-            "start": 351,
-            "end": 356,
+            "start": 296,
+            "end": 304,
             "loc": {
               "start": {
                 "line": 11,
-                "column": 54
+                "column": 36
               },
               "end": {
                 "line": 11,
-                "column": 59
+                "column": 44
               }
             },
             "typeAnnotation": {
-              "type": "AnyTypeAnnotation",
-              "start": 353,
-              "end": 356,
+              "type": "StringTypeAnnotation",
+              "start": 298,
+              "end": 304,
               "loc": {
                 "start": {
                   "line": 11,
-                  "column": 56
+                  "column": 38
                 },
                 "end": {
                   "line": 11,
-                  "column": 59
+                  "column": 44
                 }
               }
             }
           },
           "body": {
             "type": "BlockStatement",
-            "start": 357,
-            "end": 471,
+            "start": 305,
+            "end": 522,
             "loc": {
               "start": {
                 "line": 11,
-                "column": 60
+                "column": 45
               },
               "end": {
-                "line": 14,
+                "line": 16,
                 "column": 1
               }
             },
             "body": [
               {
-                "type": "VariableDeclaration",
-                "start": 361,
-                "end": 438,
-                "loc": {
-                  "start": {
-                    "line": 12,
-                    "column": 2
-                  },
-                  "end": {
-                    "line": 12,
-                    "column": 79
-                  }
-                },
-                "declarations": [
-                  {
-                    "type": "VariableDeclarator",
-                    "start": 367,
-                    "end": 437,
-                    "loc": {
-                      "start": {
-                        "line": 12,
-                        "column": 8
-                      },
-                      "end": {
-                        "line": 12,
-                        "column": 78
-                      }
-                    },
-                    "id": {
-                      "type": "Identifier",
-                      "start": 367,
-                      "end": 375,
-                      "loc": {
-                        "start": {
-                          "line": 12,
-                          "column": 8
-                        },
-                        "end": {
-                          "line": 12,
-                          "column": 16
-                        },
-                        "identifierName": "filePath"
-                      },
-                      "name": "filePath"
-                    },
-                    "init": {
-                      "type": "CallExpression",
-                      "start": 378,
-                      "end": 437,
-                      "loc": {
-                        "start": {
-                          "line": 12,
-                          "column": 19
-                        },
-                        "end": {
-                          "line": 12,
-                          "column": 78
-                        }
-                      },
-                      "callee": {
-                        "type": "MemberExpression",
-                        "start": 378,
-                        "end": 387,
-                        "loc": {
-                          "start": {
-                            "line": 12,
-                            "column": 19
-                          },
-                          "end": {
-                            "line": 12,
-                            "column": 28
-                          }
-                        },
-                        "object": {
-                          "type": "Identifier",
-                          "start": 378,
-                          "end": 382,
-                          "loc": {
-                            "start": {
-                              "line": 12,
-                              "column": 19
-                            },
-                            "end": {
-                              "line": 12,
-                              "column": 23
-                            },
-                            "identifierName": "path"
-                          },
-                          "name": "path"
-                        },
-                        "property": {
-                          "type": "Identifier",
-                          "start": 383,
-                          "end": 387,
-                          "loc": {
-                            "start": {
-                              "line": 12,
-                              "column": 24
-                            },
-                            "end": {
-                              "line": 12,
-                              "column": 28
-                            },
-                            "identifierName": "join"
-                          },
-                          "name": "join"
-                        },
-                        "computed": false
-                      },
-                      "arguments": [
-                        {
-                          "type": "Identifier",
-                          "start": 388,
-                          "end": 397,
-                          "loc": {
-                            "start": {
-                              "line": 12,
-                              "column": 29
-                            },
-                            "end": {
-                              "line": 12,
-                              "column": 38
-                            },
-                            "identifierName": "__dirname"
-                          },
-                          "name": "__dirname"
-                        },
-                        {
-                          "type": "LogicalExpression",
-                          "start": 399,
-                          "end": 436,
-                          "loc": {
-                            "start": {
-                              "line": 12,
-                              "column": 40
-                            },
-                            "end": {
-                              "line": 12,
-                              "column": 77
-                            }
-                          },
-                          "left": {
-                            "type": "Identifier",
-                            "start": 399,
-                            "end": 409,
-                            "loc": {
-                              "start": {
-                                "line": 12,
-                                "column": 40
-                              },
-                              "end": {
-                                "line": 12,
-                                "column": 50
-                              },
-                              "identifierName": "pathToFile"
-                            },
-                            "name": "pathToFile"
-                          },
-                          "operator": "||",
-                          "right": {
-                            "type": "StringLiteral",
-                            "start": 413,
-                            "end": 436,
-                            "loc": {
-                              "start": {
-                                "line": 12,
-                                "column": 54
-                              },
-                              "end": {
-                                "line": 12,
-                                "column": 77
-                              }
-                            },
-                            "extra": {
-                              "rawValue": "requiredTypes.graphql",
-                              "raw": "'requiredTypes.graphql'"
-                            },
-                            "value": "requiredTypes.graphql"
-                          }
-                        }
-                      ]
-                    }
-                  }
-                ],
-                "kind": "const"
-              },
-              {
                 "type": "ReturnStatement",
-                "start": 441,
-                "end": 469,
+                "start": 499,
+                "end": 520,
                 "loc": {
                   "start": {
-                    "line": 13,
+                    "line": 15,
                     "column": 2
                   },
                   "end": {
-                    "line": 13,
-                    "column": 30
+                    "line": 15,
+                    "column": 23
                   }
                 },
                 "argument": {
-                  "type": "CallExpression",
-                  "start": 448,
-                  "end": 468,
+                  "type": "Identifier",
+                  "start": 506,
+                  "end": 519,
                   "loc": {
                     "start": {
-                      "line": 13,
+                      "line": 15,
                       "column": 9
                     },
                     "end": {
-                      "line": 13,
-                      "column": 29
+                      "line": 15,
+                      "column": 22
+                    },
+                    "identifierName": "requiredTypes"
+                  },
+                  "name": "requiredTypes",
+                  "leadingComments": null
+                },
+                "leadingComments": [
+                  {
+                    "type": "CommentLine",
+                    "value": " for any reason npm install always forgets to install the .graphql file",
+                    "start": 309,
+                    "end": 382,
+                    "loc": {
+                      "start": {
+                        "line": 12,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 12,
+                        "column": 75
+                      }
                     }
                   },
-                  "callee": {
-                    "type": "Identifier",
-                    "start": 448,
-                    "end": 458,
+                  {
+                    "type": "CommentLine",
+                    "value": " const filePath = path.join(__dirname, pathToFile || 'requiredTypes.conf');",
+                    "start": 385,
+                    "end": 462,
                     "loc": {
                       "start": {
                         "line": 13,
-                        "column": 9
+                        "column": 2
                       },
                       "end": {
                         "line": 13,
-                        "column": 19
-                      },
-                      "identifierName": "readString"
-                    },
-                    "name": "readString"
-                  },
-                  "arguments": [
-                    {
-                      "type": "Identifier",
-                      "start": 459,
-                      "end": 467,
-                      "loc": {
-                        "start": {
-                          "line": 13,
-                          "column": 20
-                        },
-                        "end": {
-                          "line": 13,
-                          "column": 28
-                        },
-                        "identifierName": "filePath"
-                      },
-                      "name": "filePath"
+                        "column": 79
+                      }
                     }
-                  ]
-                }
+                  },
+                  {
+                    "type": "CommentLine",
+                    "value": " return readString(filePath);",
+                    "start": 465,
+                    "end": 496,
+                    "loc": {
+                      "start": {
+                        "line": 14,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 14,
+                        "column": 33
+                      }
+                    }
+                  }
+                ]
               }
             ],
             "directives": []
@@ -607,16 +355,16 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * @desc \n *  \n * @param \n * {string} pathToFile  \n * @return \n * {any} \n"
+              "value": "*\n * @desc \n *  \n * @return \n * {string} \n"
             },
             {
               "type": "CommentBlock",
-              "value": "*\n * reads and graphql file and returns it as a string\n * @param {string} pathToFile - the path of the required \n *   types .graphql file (default)\n * @return {string} requiredTypes - schema containing the required types\n ",
-              "start": 69,
-              "end": 295,
+              "value": "*\n * reads and graphql file and returns it as a string\n * @return {string} requiredTypes - schema containing the required types\n ",
+              "start": 125,
+              "end": 258,
               "loc": {
                 "start": {
-                  "line": 4,
+                  "line": 6,
                   "column": 0
                 },
                 "end": {
@@ -631,12 +379,12 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * reads and graphql file and returns it as a string\n * @param {string} pathToFile - the path of the required \n *   types .graphql file (default)\n * @return {string} requiredTypes - schema containing the required types\n ",
-            "start": 69,
-            "end": 295,
+            "value": "*\n * reads and graphql file and returns it as a string\n * @return {string} requiredTypes - schema containing the required types\n ",
+            "start": 125,
+            "end": 258,
             "loc": {
               "start": {
-                "line": 4,
+                "line": 6,
                 "column": 0
               },
               "end": {
@@ -653,13 +401,45 @@
   },
   "comments": [
     {
-      "type": "CommentBlock",
-      "value": "*\n * reads and graphql file and returns it as a string\n * @param {string} pathToFile - the path of the required \n *   types .graphql file (default)\n * @return {string} requiredTypes - schema containing the required types\n ",
-      "start": 69,
-      "end": 295,
+      "type": "CommentLine",
+      "value": " import { readString } from '../util/read';",
+      "start": 0,
+      "end": 45,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 45
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " import path from 'path';",
+      "start": 46,
+      "end": 73,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 27
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n * reads and graphql file and returns it as a string\n * @return {string} requiredTypes - schema containing the required types\n ",
+      "start": 125,
+      "end": 258,
+      "loc": {
+        "start": {
+          "line": 6,
           "column": 0
         },
         "end": {
@@ -667,9 +447,89 @@
           "column": 3
         }
       }
+    },
+    {
+      "type": "CommentLine",
+      "value": " for any reason npm install always forgets to install the .graphql file",
+      "start": 309,
+      "end": 382,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 2
+        },
+        "end": {
+          "line": 12,
+          "column": 75
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " const filePath = path.join(__dirname, pathToFile || 'requiredTypes.conf');",
+      "start": 385,
+      "end": 462,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 2
+        },
+        "end": {
+          "line": 13,
+          "column": 79
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " return readString(filePath);",
+      "start": 465,
+      "end": 496,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 2
+        },
+        "end": {
+          "line": 14,
+          "column": 33
+        }
+      }
     }
   ],
   "tokens": [
+    {
+      "type": "CommentLine",
+      "value": " import { readString } from '../util/read';",
+      "start": 0,
+      "end": 45,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 45
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " import path from 'path';",
+      "start": 46,
+      "end": 73,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 27
+        }
+      }
+    },
     {
       "type": {
         "label": "import",
@@ -685,15 +545,15 @@
         "updateContext": null
       },
       "value": "import",
-      "start": 0,
-      "end": 6,
+      "start": 75,
+      "end": 81,
       "loc": {
         "start": {
-          "line": 1,
+          "line": 4,
           "column": 0
         },
         "end": {
-          "line": 1,
+          "line": 4,
           "column": 6
         }
       }
@@ -710,15 +570,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 7,
-      "end": 8,
+      "start": 82,
+      "end": 83,
       "loc": {
         "start": {
-          "line": 1,
+          "line": 4,
           "column": 7
         },
         "end": {
-          "line": 1,
+          "line": 4,
           "column": 8
         }
       }
@@ -735,17 +595,17 @@
         "postfix": false,
         "binop": null
       },
-      "value": "readString",
-      "start": 9,
-      "end": 19,
+      "value": "requiredTypes",
+      "start": 84,
+      "end": 97,
       "loc": {
         "start": {
-          "line": 1,
+          "line": 4,
           "column": 9
         },
         "end": {
-          "line": 1,
-          "column": 19
+          "line": 4,
+          "column": 22
         }
       }
     },
@@ -761,239 +621,106 @@
         "postfix": false,
         "binop": null
       },
-      "start": 20,
-      "end": 21,
+      "start": 98,
+      "end": 99,
       "loc": {
         "start": {
-          "line": 1,
-          "column": 20
-        },
-        "end": {
-          "line": 1,
-          "column": 21
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "from",
-      "start": 22,
-      "end": 26,
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 22
-        },
-        "end": {
-          "line": 1,
-          "column": 26
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "string",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "../util/read",
-      "start": 27,
-      "end": 41,
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 27
-        },
-        "end": {
-          "line": 1,
-          "column": 41
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ";",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 41,
-      "end": 42,
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 41
-        },
-        "end": {
-          "line": 1,
-          "column": 42
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "import",
-        "keyword": "import",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "import",
-      "start": 43,
-      "end": 49,
-      "loc": {
-        "start": {
-          "line": 2,
-          "column": 0
-        },
-        "end": {
-          "line": 2,
-          "column": 6
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "path",
-      "start": 50,
-      "end": 54,
-      "loc": {
-        "start": {
-          "line": 2,
-          "column": 7
-        },
-        "end": {
-          "line": 2,
-          "column": 11
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "from",
-      "start": 55,
-      "end": 59,
-      "loc": {
-        "start": {
-          "line": 2,
-          "column": 12
-        },
-        "end": {
-          "line": 2,
-          "column": 16
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "string",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "path",
-      "start": 60,
-      "end": 66,
-      "loc": {
-        "start": {
-          "line": 2,
-          "column": 17
-        },
-        "end": {
-          "line": 2,
-          "column": 23
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ";",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 66,
-      "end": 67,
-      "loc": {
-        "start": {
-          "line": 2,
+          "line": 4,
           "column": 23
         },
         "end": {
-          "line": 2,
+          "line": 4,
           "column": 24
         }
       }
     },
     {
-      "type": "CommentBlock",
-      "value": "*\n * reads and graphql file and returns it as a string\n * @param {string} pathToFile - the path of the required \n *   types .graphql file (default)\n * @return {string} requiredTypes - schema containing the required types\n ",
-      "start": 69,
-      "end": 295,
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "from",
+      "start": 100,
+      "end": 104,
       "loc": {
         "start": {
           "line": 4,
+          "column": 25
+        },
+        "end": {
+          "line": 4,
+          "column": 29
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "./requiredTypes",
+      "start": 105,
+      "end": 122,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 30
+        },
+        "end": {
+          "line": 4,
+          "column": 47
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 122,
+      "end": 123,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 47
+        },
+        "end": {
+          "line": 4,
+          "column": 48
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n * reads and graphql file and returns it as a string\n * @return {string} requiredTypes - schema containing the required types\n ",
+      "start": 125,
+      "end": 258,
+      "loc": {
+        "start": {
+          "line": 6,
           "column": 0
         },
         "end": {
@@ -1017,8 +744,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 297,
-      "end": 303,
+      "start": 260,
+      "end": 266,
       "loc": {
         "start": {
           "line": 11,
@@ -1044,8 +771,8 @@
         "binop": null
       },
       "value": "function",
-      "start": 304,
-      "end": 312,
+      "start": 267,
+      "end": 275,
       "loc": {
         "start": {
           "line": 11,
@@ -1070,8 +797,8 @@
         "binop": null
       },
       "value": "buildRequiredTypes",
-      "start": 313,
-      "end": 331,
+      "start": 276,
+      "end": 294,
       "loc": {
         "start": {
           "line": 11,
@@ -1095,8 +822,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 331,
-      "end": 332,
+      "start": 294,
+      "end": 295,
       "loc": {
         "start": {
           "line": 11,
@@ -1110,9 +837,9 @@
     },
     {
       "type": {
-        "label": "name",
+        "label": ")",
         "beforeExpr": false,
-        "startsExpr": true,
+        "startsExpr": false,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
@@ -1120,9 +847,8 @@
         "postfix": false,
         "binop": null
       },
-      "value": "pathToFile",
-      "start": 332,
-      "end": 342,
+      "start": 295,
+      "end": 296,
       "loc": {
         "start": {
           "line": 11,
@@ -1130,7 +856,7 @@
         },
         "end": {
           "line": 11,
-          "column": 45
+          "column": 36
         }
       }
     },
@@ -1147,16 +873,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 342,
-      "end": 343,
+      "start": 296,
+      "end": 297,
       "loc": {
         "start": {
           "line": 11,
-          "column": 45
+          "column": 36
         },
         "end": {
           "line": 11,
-          "column": 46
+          "column": 37
         }
       }
     },
@@ -1173,93 +899,16 @@
         "binop": null
       },
       "value": "string",
-      "start": 344,
-      "end": 350,
+      "start": 298,
+      "end": 304,
       "loc": {
         "start": {
           "line": 11,
-          "column": 47
+          "column": 38
         },
         "end": {
           "line": 11,
-          "column": 53
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ")",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 350,
-      "end": 351,
-      "loc": {
-        "start": {
-          "line": 11,
-          "column": 53
-        },
-        "end": {
-          "line": 11,
-          "column": 54
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ":",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 351,
-      "end": 352,
-      "loc": {
-        "start": {
-          "line": 11,
-          "column": 54
-        },
-        "end": {
-          "line": 11,
-          "column": 55
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "any",
-      "start": 353,
-      "end": 356,
-      "loc": {
-        "start": {
-          "line": 11,
-          "column": 56
-        },
-        "end": {
-          "line": 11,
-          "column": 59
+          "column": 44
         }
       }
     },
@@ -1275,36 +924,24 @@
         "postfix": false,
         "binop": null
       },
-      "start": 357,
-      "end": 358,
+      "start": 305,
+      "end": 306,
       "loc": {
         "start": {
           "line": 11,
-          "column": 60
+          "column": 45
         },
         "end": {
           "line": 11,
-          "column": 61
+          "column": 46
         }
       }
     },
     {
-      "type": {
-        "label": "const",
-        "keyword": "const",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "const",
-      "start": 361,
-      "end": 366,
+      "type": "CommentLine",
+      "value": " for any reason npm install always forgets to install the .graphql file",
+      "start": 309,
+      "end": 382,
       "loc": {
         "start": {
           "line": 12,
@@ -1312,346 +949,39 @@
         },
         "end": {
           "line": 12,
-          "column": 7
+          "column": 75
         }
       }
     },
     {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "filePath",
-      "start": 367,
-      "end": 375,
+      "type": "CommentLine",
+      "value": " const filePath = path.join(__dirname, pathToFile || 'requiredTypes.conf');",
+      "start": 385,
+      "end": 462,
       "loc": {
         "start": {
-          "line": 12,
-          "column": 8
+          "line": 13,
+          "column": 2
         },
         "end": {
-          "line": 12,
-          "column": 16
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "=",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": true,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "=",
-      "start": 376,
-      "end": 377,
-      "loc": {
-        "start": {
-          "line": 12,
-          "column": 17
-        },
-        "end": {
-          "line": 12,
-          "column": 18
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "path",
-      "start": 378,
-      "end": 382,
-      "loc": {
-        "start": {
-          "line": 12,
-          "column": 19
-        },
-        "end": {
-          "line": 12,
-          "column": 23
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ".",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 382,
-      "end": 383,
-      "loc": {
-        "start": {
-          "line": 12,
-          "column": 23
-        },
-        "end": {
-          "line": 12,
-          "column": 24
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "join",
-      "start": 383,
-      "end": 387,
-      "loc": {
-        "start": {
-          "line": 12,
-          "column": 24
-        },
-        "end": {
-          "line": 12,
-          "column": 28
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "(",
-        "beforeExpr": true,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 387,
-      "end": 388,
-      "loc": {
-        "start": {
-          "line": 12,
-          "column": 28
-        },
-        "end": {
-          "line": 12,
-          "column": 29
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "__dirname",
-      "start": 388,
-      "end": 397,
-      "loc": {
-        "start": {
-          "line": 12,
-          "column": 29
-        },
-        "end": {
-          "line": 12,
-          "column": 38
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ",",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 397,
-      "end": 398,
-      "loc": {
-        "start": {
-          "line": 12,
-          "column": 38
-        },
-        "end": {
-          "line": 12,
-          "column": 39
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "pathToFile",
-      "start": 399,
-      "end": 409,
-      "loc": {
-        "start": {
-          "line": 12,
-          "column": 40
-        },
-        "end": {
-          "line": 12,
-          "column": 50
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "||",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": 1,
-        "updateContext": null
-      },
-      "value": "||",
-      "start": 410,
-      "end": 412,
-      "loc": {
-        "start": {
-          "line": 12,
-          "column": 51
-        },
-        "end": {
-          "line": 12,
-          "column": 53
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "string",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "requiredTypes.graphql",
-      "start": 413,
-      "end": 436,
-      "loc": {
-        "start": {
-          "line": 12,
-          "column": 54
-        },
-        "end": {
-          "line": 12,
-          "column": 77
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ")",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 436,
-      "end": 437,
-      "loc": {
-        "start": {
-          "line": 12,
-          "column": 77
-        },
-        "end": {
-          "line": 12,
-          "column": 78
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ";",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 437,
-      "end": 438,
-      "loc": {
-        "start": {
-          "line": 12,
-          "column": 78
-        },
-        "end": {
-          "line": 12,
+          "line": 13,
           "column": 79
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " return readString(filePath);",
+      "start": 465,
+      "end": 496,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 2
+        },
+        "end": {
+          "line": 14,
+          "column": 33
         }
       }
     },
@@ -1670,15 +1000,15 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 441,
-      "end": 447,
+      "start": 499,
+      "end": 505,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 15,
           "column": 2
         },
         "end": {
-          "line": 13,
+          "line": 15,
           "column": 8
         }
       }
@@ -1695,93 +1025,17 @@
         "postfix": false,
         "binop": null
       },
-      "value": "readString",
-      "start": 448,
-      "end": 458,
+      "value": "requiredTypes",
+      "start": 506,
+      "end": 519,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 15,
           "column": 9
         },
         "end": {
-          "line": 13,
-          "column": 19
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "(",
-        "beforeExpr": true,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 458,
-      "end": 459,
-      "loc": {
-        "start": {
-          "line": 13,
-          "column": 19
-        },
-        "end": {
-          "line": 13,
-          "column": 20
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "filePath",
-      "start": 459,
-      "end": 467,
-      "loc": {
-        "start": {
-          "line": 13,
-          "column": 20
-        },
-        "end": {
-          "line": 13,
-          "column": 28
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ")",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 467,
-      "end": 468,
-      "loc": {
-        "start": {
-          "line": 13,
-          "column": 28
-        },
-        "end": {
-          "line": 13,
-          "column": 29
+          "line": 15,
+          "column": 22
         }
       }
     },
@@ -1798,16 +1052,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 468,
-      "end": 469,
+      "start": 519,
+      "end": 520,
       "loc": {
         "start": {
-          "line": 13,
-          "column": 29
+          "line": 15,
+          "column": 22
         },
         "end": {
-          "line": 13,
-          "column": 30
+          "line": 15,
+          "column": 23
         }
       }
     },
@@ -1823,15 +1077,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 470,
-      "end": 471,
+      "start": 521,
+      "end": 522,
       "loc": {
         "start": {
-          "line": 14,
+          "line": 16,
           "column": 0
         },
         "end": {
-          "line": 14,
+          "line": 16,
           "column": 1
         }
       }
@@ -1849,15 +1103,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 472,
-      "end": 472,
+      "start": 523,
+      "end": 523,
       "loc": {
         "start": {
-          "line": 15,
+          "line": 17,
           "column": 0
         },
         "end": {
-          "line": 15,
+          "line": 17,
           "column": 0
         }
       }

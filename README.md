@@ -692,7 +692,7 @@ yarn test-add-update-remove
 ```
 
 If you are having troubles somewhere, have a look into the running example at:
-[tobkle/create-graphql-server branch: auth+arguments](https://github.com/tobkle/create-graphql-server/tree/auth+arguments)
+[tobkle/create-graphql-server branch: Authorization+Arguments](https://github.com/tobkle/create-graphql-server/tree/Authorization+Arguments)
 
 ## Documentation
 [API Documentation](https://tobkle.github.io/create-graphql-server-query-arguments/)

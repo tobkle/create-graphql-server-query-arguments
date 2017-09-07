@@ -132,6 +132,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "create-graphql-server-query-arguments/src/sendquery.js~adminuser",
+    "variable/index.html#static-variable-adminUser",
+    "<span>adminUser</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/sendQuery.js</span>",
+    "variable"
+  ],
+  [
     "create-graphql-server-query-arguments/src/util/graphql.js~applycustomdirectives",
     "function/index.html#static-function-applyCustomDirectives",
     "<span>applyCustomDirectives</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/graphql.js</span>",
@@ -222,6 +228,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "create-graphql-server-query-arguments/src/sendquery.js~defaultuser",
+    "variable/index.html#static-variable-defaultUser",
+    "<span>defaultUser</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/sendQuery.js</span>",
+    "variable"
+  ],
+  [
     "create-graphql-server-query-arguments/src/schema/enhanceschemawithqueryarguments.js~enhanceschemawithqueryarguments",
     "function/index.html#static-function-enhanceSchemaWithQueryArguments",
     "<span>enhanceSchemaWithQueryArguments</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/schema/enhanceSchemaWithQueryArguments.js</span>",
@@ -231,6 +243,12 @@ window.esdocSearchIndex = [
     "create-graphql-server-query-arguments/src/util/graphql.js~getbasetype",
     "function/index.html#static-function-getBaseType",
     "<span>getBaseType</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/graphql.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/sendquery.js~gettoken",
+    "function/index.html#static-function-getToken",
+    "<span>getToken</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/sendQuery.js</span>",
     "function"
   ],
   [
@@ -282,16 +300,58 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "create-graphql-server-query-arguments/src/schema/requiredtypes.js~requiredtypes",
+    "variable/index.html#static-variable-requiredTypes",
+    "<span>requiredTypes</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/schema/requiredTypes.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/sendquery.js~roleuser",
+    "variable/index.html#static-variable-roleUser",
+    "<span>roleUser</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/sendQuery.js</span>",
+    "variable"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/sendquery.js~sendquery",
+    "function/index.html#static-function-sendQuery",
+    "<span>sendQuery</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/sendQuery.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/sendquery.js~sendqueryandexpect",
+    "function/index.html#static-function-sendQueryAndExpect",
+    "<span>sendQueryAndExpect</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/sendQuery.js</span>",
+    "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/index-test-cases.js~suite",
+    "variable/index.html#static-variable-suite",
+    "<span>suite</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/index-test-cases.js</span>",
+    "variable"
+  ],
+  [
     "create-graphql-server-query-arguments/src/util/read.js~templatetoast",
     "function/index.html#static-function-templateToAst",
     "<span>templateToAst</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/read.js</span>",
     "function"
   ],
   [
+    "create-graphql-server-query-arguments/src/test-cases.js~testcases",
+    "variable/index.html#static-variable-testCases",
+    "<span>testCases</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/test-cases.js</span>",
+    "variable"
+  ],
+  [
     "create-graphql-server-query-arguments/src/util/capitalization.js~ucfirst",
     "function/index.html#static-function-ucFirst",
     "<span>ucFirst</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/util/capitalization.js</span>",
     "function"
+  ],
+  [
+    "create-graphql-server-query-arguments/src/sendquery.js~unknownuser",
+    "variable/index.html#static-variable-unknownUser",
+    "<span>unknownUser</span> <span class=\"search-result-import-path\">create-graphql-server-query-arguments/src/sendQuery.js</span>",
+    "variable"
   ],
   [
     "src/.external-ecmascript.js~array",
@@ -582,6 +642,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/index-test-cases.js",
+    "file/src/index-test-cases.js.html",
+    "src/index-test-cases.js",
+    "file"
+  ],
+  [
     "src/index.js",
     "file/src/index.js.html",
     "src/index.js",
@@ -645,6 +711,24 @@ window.esdocSearchIndex = [
     "src/schema/index.js",
     "file/src/schema/index.js.html",
     "src/schema/index.js",
+    "file"
+  ],
+  [
+    "src/schema/requiredtypes.js",
+    "file/src/schema/requiredTypes.js.html",
+    "src/schema/requiredTypes.js",
+    "file"
+  ],
+  [
+    "src/sendquery.js",
+    "file/src/sendQuery.js.html",
+    "src/sendQuery.js",
+    "file"
+  ],
+  [
+    "src/test-cases.js",
+    "file/src/test-cases.js.html",
+    "src/test-cases.js",
     "file"
   ],
   [

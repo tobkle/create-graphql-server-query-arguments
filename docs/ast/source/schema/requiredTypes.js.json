@@ -1,0 +1,383 @@
+{
+  "type": "File",
+  "start": 0,
+  "end": 1619,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 104,
+      "column": 0
+    }
+  },
+  "program": {
+    "type": "Program",
+    "start": 0,
+    "end": 1619,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 104,
+        "column": 0
+      }
+    },
+    "sourceType": "module",
+    "body": [
+      {
+        "type": "ExportNamedDeclaration",
+        "start": 0,
+        "end": 1618,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 103,
+            "column": 2
+          }
+        },
+        "specifiers": [],
+        "source": null,
+        "declaration": {
+          "type": "VariableDeclaration",
+          "start": 7,
+          "end": 1618,
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 7
+            },
+            "end": {
+              "line": 103,
+              "column": 2
+            }
+          },
+          "declarations": [
+            {
+              "type": "VariableDeclarator",
+              "start": 13,
+              "end": 1617,
+              "loc": {
+                "start": {
+                  "line": 1,
+                  "column": 13
+                },
+                "end": {
+                  "line": 103,
+                  "column": 1
+                }
+              },
+              "id": {
+                "type": "Identifier",
+                "start": 13,
+                "end": 26,
+                "loc": {
+                  "start": {
+                    "line": 1,
+                    "column": 13
+                  },
+                  "end": {
+                    "line": 1,
+                    "column": 26
+                  },
+                  "identifierName": "requiredTypes"
+                },
+                "name": "requiredTypes"
+              },
+              "init": {
+                "type": "TemplateLiteral",
+                "start": 29,
+                "end": 1617,
+                "loc": {
+                  "start": {
+                    "line": 1,
+                    "column": 29
+                  },
+                  "end": {
+                    "line": 103,
+                    "column": 1
+                  }
+                },
+                "expressions": [],
+                "quasis": [
+                  {
+                    "type": "TemplateElement",
+                    "start": 30,
+                    "end": 1616,
+                    "loc": {
+                      "start": {
+                        "line": 1,
+                        "column": 30
+                      },
+                      "end": {
+                        "line": 103,
+                        "column": 0
+                      }
+                    },
+                    "value": {
+                      "raw": "\n# Direction sets  the sort order: Ascending (ASC) = default, Descending (DESC)\nenum Direction {\n  # ascending order\n  ASC\n\n  # descending order\n  DESC \n}\n\n# Regex Type provides access to regular expressions\ninput Regex {\n  # Regular Expression: Without the /, but you can use ^ and $\n  regex: String!\n\n  # Regular Expression: Options\n  options: [RegexOptions!]\n}\n\n# RegexOptions provides options, how to run the regular expression\nenum RegexOptions {\n  # global: Don't restart after first match\n  global\n\n  # multiline: ^ and $ match start/end of line\n  multiline\n\n  # insensitive: Case insensitive match\n  insensitive\n\n  # sticky: Proceed matching from where previous match ended only\n  sticky\n\n  # unicode: Match with full unicode\n  unicode\n}\n\nenum BSONType {\n  # Double 1 \"double\"\n  double\n\n  # String 2 \"string\"\n  string\n\n  # Object 3 \"object\"\n  object\n\n  # Array 4 \"array\"\n  array\n\n  # Binary data 5 \"binData\"  \n  binData\n\n  # Undefined 6 \"undefined\" Deprecated\n  undefined\n\n  # ObjectId 7 \"objectId\"\n  objectId\n\n  # Boolean 8 \"bool\"\n  bool\n\n  # Date 9 \"date\"\n  date\n\n  # Null 10 \"null\"\n  null\n\n  # Regular Expression 11 \"regex\"\n  regex\n\n  # DBPointer 12 \"dbPointer\" Deprecated\n  dbPointer\n\n  # JavaScript 13 \"javascript\"\n  javascript\n\n  # Symbol 14 \"symbol\" Deprecated\n  symbol\n\n  # JavaScript (with scope) 15 \"javascriptWithScope\"\n  javascriptWithScope\n\n  # 32-bit integer 16 \"int\"\n  int\n\n  # Timestamp 17 \"timestamp\"\n  timestamp\n\n  # 64-bit integer 18 \"long\"\n  long\n\n  # Decimal128 19 \"decimal\"\n  decimal\n\n  # Min key -1 \"minKey\"\n  minKey\n\n  # Max key 127 \"maxKey\"\n  maxKey\n}\n\n",
+                      "cooked": "\n# Direction sets  the sort order: Ascending (ASC) = default, Descending (DESC)\nenum Direction {\n  # ascending order\n  ASC\n\n  # descending order\n  DESC \n}\n\n# Regex Type provides access to regular expressions\ninput Regex {\n  # Regular Expression: Without the /, but you can use ^ and $\n  regex: String!\n\n  # Regular Expression: Options\n  options: [RegexOptions!]\n}\n\n# RegexOptions provides options, how to run the regular expression\nenum RegexOptions {\n  # global: Don't restart after first match\n  global\n\n  # multiline: ^ and $ match start/end of line\n  multiline\n\n  # insensitive: Case insensitive match\n  insensitive\n\n  # sticky: Proceed matching from where previous match ended only\n  sticky\n\n  # unicode: Match with full unicode\n  unicode\n}\n\nenum BSONType {\n  # Double 1 \"double\"\n  double\n\n  # String 2 \"string\"\n  string\n\n  # Object 3 \"object\"\n  object\n\n  # Array 4 \"array\"\n  array\n\n  # Binary data 5 \"binData\"  \n  binData\n\n  # Undefined 6 \"undefined\" Deprecated\n  undefined\n\n  # ObjectId 7 \"objectId\"\n  objectId\n\n  # Boolean 8 \"bool\"\n  bool\n\n  # Date 9 \"date\"\n  date\n\n  # Null 10 \"null\"\n  null\n\n  # Regular Expression 11 \"regex\"\n  regex\n\n  # DBPointer 12 \"dbPointer\" Deprecated\n  dbPointer\n\n  # JavaScript 13 \"javascript\"\n  javascript\n\n  # Symbol 14 \"symbol\" Deprecated\n  symbol\n\n  # JavaScript (with scope) 15 \"javascriptWithScope\"\n  javascriptWithScope\n\n  # 32-bit integer 16 \"int\"\n  int\n\n  # Timestamp 17 \"timestamp\"\n  timestamp\n\n  # 64-bit integer 18 \"long\"\n  long\n\n  # Decimal128 19 \"decimal\"\n  decimal\n\n  # Min key -1 \"minKey\"\n  minKey\n\n  # Max key 127 \"maxKey\"\n  maxKey\n}\n\n"
+                    },
+                    "tail": true
+                  }
+                ]
+              }
+            }
+          ],
+          "kind": "const",
+          "leadingComments": [],
+          "trailingComments": []
+        },
+        "exportKind": "value"
+      }
+    ],
+    "directives": []
+  },
+  "comments": [],
+  "tokens": [
+    {
+      "type": {
+        "label": "export",
+        "keyword": "export",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "export",
+      "start": 0,
+      "end": 6,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "const",
+        "keyword": "const",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "const",
+      "start": 7,
+      "end": 12,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 7
+        },
+        "end": {
+          "line": 1,
+          "column": 12
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "requiredTypes",
+      "start": 13,
+      "end": 26,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 13
+        },
+        "end": {
+          "line": 1,
+          "column": 26
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 27,
+      "end": 28,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 27
+        },
+        "end": {
+          "line": 1,
+          "column": 28
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "`",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 29,
+      "end": 30,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 29
+        },
+        "end": {
+          "line": 1,
+          "column": 30
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "template",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "\n# Direction sets  the sort order: Ascending (ASC) = default, Descending (DESC)\nenum Direction {\n  # ascending order\n  ASC\n\n  # descending order\n  DESC \n}\n\n# Regex Type provides access to regular expressions\ninput Regex {\n  # Regular Expression: Without the /, but you can use ^ and $\n  regex: String!\n\n  # Regular Expression: Options\n  options: [RegexOptions!]\n}\n\n# RegexOptions provides options, how to run the regular expression\nenum RegexOptions {\n  # global: Don't restart after first match\n  global\n\n  # multiline: ^ and $ match start/end of line\n  multiline\n\n  # insensitive: Case insensitive match\n  insensitive\n\n  # sticky: Proceed matching from where previous match ended only\n  sticky\n\n  # unicode: Match with full unicode\n  unicode\n}\n\nenum BSONType {\n  # Double 1 \"double\"\n  double\n\n  # String 2 \"string\"\n  string\n\n  # Object 3 \"object\"\n  object\n\n  # Array 4 \"array\"\n  array\n\n  # Binary data 5 \"binData\"  \n  binData\n\n  # Undefined 6 \"undefined\" Deprecated\n  undefined\n\n  # ObjectId 7 \"objectId\"\n  objectId\n\n  # Boolean 8 \"bool\"\n  bool\n\n  # Date 9 \"date\"\n  date\n\n  # Null 10 \"null\"\n  null\n\n  # Regular Expression 11 \"regex\"\n  regex\n\n  # DBPointer 12 \"dbPointer\" Deprecated\n  dbPointer\n\n  # JavaScript 13 \"javascript\"\n  javascript\n\n  # Symbol 14 \"symbol\" Deprecated\n  symbol\n\n  # JavaScript (with scope) 15 \"javascriptWithScope\"\n  javascriptWithScope\n\n  # 32-bit integer 16 \"int\"\n  int\n\n  # Timestamp 17 \"timestamp\"\n  timestamp\n\n  # 64-bit integer 18 \"long\"\n  long\n\n  # Decimal128 19 \"decimal\"\n  decimal\n\n  # Min key -1 \"minKey\"\n  minKey\n\n  # Max key 127 \"maxKey\"\n  maxKey\n}\n\n",
+      "start": 30,
+      "end": 1616,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 30
+        },
+        "end": {
+          "line": 103,
+          "column": 0
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "`",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 1616,
+      "end": 1617,
+      "loc": {
+        "start": {
+          "line": 103,
+          "column": 0
+        },
+        "end": {
+          "line": 103,
+          "column": 1
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1617,
+      "end": 1618,
+      "loc": {
+        "start": {
+          "line": 103,
+          "column": 1
+        },
+        "end": {
+          "line": 103,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "eof",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1619,
+      "end": 1619,
+      "loc": {
+        "start": {
+          "line": 104,
+          "column": 0
+        },
+        "end": {
+          "line": 104,
+          "column": 0
+        }
+      }
+    }
+  ]
+}

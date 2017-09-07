@@ -29,7 +29,10 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ASC">ASC</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getToken">getToken</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sendQuery">sendQuery</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sendQueryAndExpect">sendQueryAndExpect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ASC">ASC</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BOOLEAN">BOOLEAN</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BSON_TYPE">BSON_TYPE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DEFAULT_LIMIT">DEFAULT_LIMIT</a></span></span></li>
@@ -49,7 +52,13 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TEST_GENERATED">TEST_GENERATED</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TEST_GQL_DATA">TEST_GQL_DATA</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TEST_GQL_EXTENSION">TEST_GQL_EXTENSION</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-suite">suite</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-modulePath">modulePath</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-adminUser">adminUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultUser">defaultUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-roleUser">roleUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-unknownUser">unknownUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-testCases">testCases</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#model">model</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildBaseQuery">buildBaseQuery</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildFilterQuery">buildFilterQuery</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildLimit">buildLimit</a></span></span></li>
@@ -58,6 +67,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepareQueries">prepareQueries</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#schema">schema</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildRequiredTypes">buildRequiredTypes</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-enhanceSchemaWithQueryArguments">enhanceSchemaWithQueryArguments</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-requiredTypes">requiredTypes</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#util">util</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-lcFirst">lcFirst</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ucFirst">ucFirst</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addPaginationArguments">addPaginationArguments</a></span></span></li>
@@ -150,14 +160,28 @@ TODO: When server is up and running: rename src/<strong>tests</strong>/end-to-en
 <li>NOR</li>
 <li>OR</li>
 </ul>
-<h2 id="installation">Installation</h2><h3 id="installation-part-1----add-the-module-to-create-graphql-server-project">Installation Part 1 -- add the module to create-graphql-server project</h3><pre><code class="lang-bash"><code class="source-code prettyprint">yarn add create-graphql-server-query-arguments</code>
+<h2 id="installation">Installation</h2><h3 id="installation-part-1----add-the-module-to-create-graphql-server-project">Installation Part 1 -- add the module to create-graphql-server project</h3><p>The create-graphql-server generator actually consists out of three parts:</p>
+<ol>
+<li>root directory, the generator with directory &quot;generate&quot; and its according &quot;package.json&quot;</li>
+<li>skel directory, contains the skeleton of the future &quot;to-be-generated-app&quot;, also with its &quot;package.json&quot;</li>
+<li>test/output-app directory, contains a generated test application, which is like the app in skel, but with already generated parts. This is used for test runs, to check, if it produces valid code.</li>
+</ol>
+<p>In order to get the whole up and running, we have to consider all three parts.</p>
+<p>In the &quot;root&quot; directory:</p>
+<pre><code class="lang-bash"><code class="source-code prettyprint">yarn add create-graphql-server-query-arguments</code>
 </code></pre>
-<h3 id="installation-part-2----add-it-to-the-server-for-the-mongodb-accesses">Installation Part 2 -- add it to the server for the mongoDB accesses</h3><p>Add this module to your express server in &quot;create-graphql-server/skel/server/index.js&quot; and provide it to your data model by:</p>
+<p>In the &quot;test/output-app&quot; directory</p>
+<pre><code class="lang-bash"><code class="source-code prettyprint">yarn add create-graphql-server-query-arguments</code>
+</code></pre>
+<p>In the &quot;skel/package.json&quot;, we have to update only the package.json, that it looks the same like in &quot;test/output-app&quot;. Just copy the package.json like so and replace &lt;path&gt; with your create-graphql-server directory path (use pwd, to find out).</p>
+<pre><code class="lang-bash"><code class="source-code prettyprint">cp &lt;path&gt;/test/output-app/package.json &lt;path&gt;/skel/package.json</code>
+</code></pre>
+<h3 id="installation-part-2----add-it-to-the-server-for-the-mongodb-accesses">Installation Part 2 -- add it to the server for the mongoDB accesses</h3><p>Add this module to your express server in &quot;create-graphql-server/skel/server/index.js&quot; and also in the &quot;test/output-app/server/index.js&quot; and provide it to your data model by:</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">...
 import { prepareQueries } from &apos;create-graphql-server-query-arguments&apos;;
 ...</code>
 </code></pre>
-<p>... and also in skel/server/index.js add it it your your data model context by...</p>
+<p>... further below in both files, also add it it your your data model context...</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">...
 app.use(&apos;/graphql&apos;, (req, res, next) =&gt; {
   passport.authenticate(&apos;jwt&apos;, { session: false }, (err, me) =&gt; {
@@ -171,7 +195,7 @@ app.use(&apos;/graphql&apos;, (req, res, next) =&gt; {
 })
 ...</code>
 </code></pre>
-<p>Now you can access it in your data models with &quot;this.context.prepareQueries&quot;:</p>
+<p>Now you can access it in your data models with &quot;this.context.prepareQueries&quot;, e.g. in your &quot;model/User.js&quot;:</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">find(args, me, resolver) {
   const { baseQuery, sortQuery, skip, limit} = this.context.prepareQueries( args ); // &lt;===
   const authQuery = queryForRoles(/* auth logic here */);
@@ -185,8 +209,8 @@ app.use(&apos;/graphql&apos;, (req, res, next) =&gt; {
 }</code>
 </code></pre>
 <p>Be sure, that also the resolver(s) pass on all &quot;args&quot; to your model method &quot;find&quot;.</p>
-<p>Add these adjustments also to your: &quot;test/output-app/server/index.js&quot;, otherwise your test runs will fail, as it compares the generated app files from &quot;skel&quot; with this &quot;output-app&quot; files.</p>
-<h3 id="installation-part-3----general-type-definitions-for-all-arguments--but-can-be-defined-only-once">Installation Part 3 -- General Type Definitions for all arguments, but can be defined only once</h3><p>add to file &quot;skel/schema/index.js&quot;</p>
+<p>If you forget to sync your changes in both the &quot;skel&quot; directory and your &quot;test/output-app&quot; directory, your test runs will fail. It compares the generated app files from &quot;skel&quot; with those in the &quot;output-app&quot; files.</p>
+<h3 id="installation-part-3----general-type-definitions-for-all-arguments--but-can-be-defined-only-once">Installation Part 3 -- General Type Definitions for all arguments, but can be defined only once</h3><p>Add to files &quot;skel/schema/index.js&quot; and &quot;test/output-app/schema/index.js&quot;:</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">...
 import { buildRequiredTypes } from &apos;create-graphql-server-query-arguments&apos;; // &lt;=== add this line
 ...
@@ -212,27 +236,478 @@ export default typeDefs;
 ...</code>
 </code></pre>
 <p>Caution: Do the same again in the &quot;test/output-app/schema/index.js&quot; to have proper test runs.</p>
-<h3 id="installation-part-4----generator-for-schema-for-individual-argument-type-definitions">Installation Part 4 -- Generator for Schema for individual argument type definitions</h3><p>Add to file &quot;generate/schema/index.js&quot; the following two statements:</p>
+<h3 id="installation-part-4----generator-for-schema-for-individual-argument-type-definitions">Installation Part 4 -- Generator for Schema for individual argument type definitions</h3><p>Add to file &quot;generate/schema/index.js&quot; the following statements:</p>
+<p>If you don&apos;t have installed &quot;create-graphql-server-authorization&quot;, use this:</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">...
 import { 
     enhanceSchemaWithQueryArguments 
 } from &apos;create-graphql-server-query-arguments&apos;; // &lt;== here
 ...
 ...
-  // at the end enhance with query arguments...
-  const outputSchemaWithArguments = enhanceSchemaWithQueryArguments(outputSchemaWithAuth); // &lt;== here
+      // if you have NOT installed create-graphql-server-authorization add this:
+      const outputSchemaWithArguments = enhanceSchemaWithQueryArguments(outputSchema); // &lt;== here
 
-  return outputSchemaWithArguments; // &lt;== here
+    return outputSchemaWithArguments;  // &lt;== here
+}</code>
+</code></pre>
+<p>If you have installed also &quot;create-graphql-server-authorization&quot;, use this instead:</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">...
+...
+  // if you have also create-graphql-server-authorization installed use this:
+  const outputSchemaWithAuth = enhanceSchemaForAuthorization(outputSchema);
+  const outputSchemaWithArguments = enhanceSchemaWithQueryArguments(outputSchemaWithAuth);   // &lt;== here
+
+  return outputSchemaWithArguments;   // &lt;== here
 }</code>
 </code></pre>
 <p>Add those types to your outputSchema.</p>
+<h3 id="installation-part-5-----adjust-model-and-resolver-templates">Installation Part 5 --- adjust model and resolver templates</h3><p>In &quot;generate/model/templates&quot; and &quot;generate/resolvers/templates&quot; adjust the templates: &quot;default_default.template&quot; and &quot;default_user.template&quot;. (If you use create-graphql-server-authorization as well, you have to create additionally the following two files: &quot;authorize_default.template&quot; and &quot;authorize_user.template&quot;).</p>
+<h3 id="adjust--quot-generate-model-templates-default-default-default-template-quot-">Adjust &quot;generate/model/templates/default/default_default.template&quot;</h3><p>from...</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">...
+    find({ lastCreatedAt = 0, limit = 10, baseQuery = {} }) {
+      const finalQuery = { ...baseQuery, createdAt: { $gt: lastCreatedAt } };
+      return this.collection
+        .find(finalQuery)
+        .sort({ createdAt: 1 })
+        .limit(limit)
+        .toArray();
+    }
+...</code>
+</code></pre>
+<p>...to...</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">...
+    find(args) {
+      const { baseQuery, sortQuery, skip, limit} = this.context.prepareQueries( args );
+      const finalQuery = { ...baseQuery };
+      this.context.log.debug(`\n\n${resolver} DB-Query:\n\n`, JSON.stringify(finalQuery, null, 2), &apos;\nsort:&apos;, sortQuery,&apos;\nskip:&apos;, skip, &apos;\nlimit:&apos;, limit, &apos;\n&apos;,&apos;\n&apos;);
+      return this.collection
+        .find(finalQuery)
+        .sort(sortQuery)
+        .skip(skip)
+        .limit(limit)
+        .toArray();
+    }
+...</code>
+</code></pre>
+<h3 id="adjust--quot-generate-model-templates-user-default-user-template-quot-">Adjust &quot;generate/model/templates/user/default_user.template&quot;</h3><p>from....</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">...
+    find({ lastCreatedAt = 0, limit = 10, baseQuery = {} }{{#if authorize}}, me, resolver{{/if}}) {
+      const finalQuery = { ...baseQuery, createdAt: { $gt: lastCreatedAt } };
+      return this.collection
+        .find(finalQuery)
+        .sort({ createdAt: 1 })
+        .limit(limit)
+        .toArray();
+    }
+...</code>
+</code></pre>
+<p>...to...</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">...
+    find(args) {
+      const { baseQuery, sortQuery, skip, limit} = this.context.prepareQueries( args );
+      const finalQuery = { ...baseQuery  };
+      this.context.log.debug(`\n\n${resolver} DB-Query:\n\n`, JSON.stringify(finalQuery, null, 2), &apos;\nsort:&apos;, sortQuery,&apos;\nskip:&apos;, skip, &apos;\nlimit:&apos;, limit, &apos;\n&apos;,&apos;\n&apos;);
+      return this.collection
+        .find(finalQuery)
+        .sort(sortQuery)
+        .skip(skip)
+        .limit(limit)
+        .toArray();
+    }
+...</code>
+</code></pre>
+<h3 id="change--quot-generate-resolvers-templates-default-default-default-template-quot-">Change &quot;generate/resolvers/templates/default/default_default.template&quot;</h3><p>from...</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">...
+Query: {
+  {{typeName}}s(root, { lastCreatedAt, limit }, { {{TypeName}}, me }) {
+    return {{TypeName}}.find({ lastCreatedAt, limit }, me, &apos;{{typeName}}s&apos;);
+  },
+...</code>
+</code></pre>
+<p>...to...</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">...
+Query: {
+    {{typeName}}s(root, args, { {{TypeName}}, me }) {
+      return {{TypeName}}.find(args, me, &apos;{{typeName}}s&apos;);
+    },
+...</code>
+</code></pre>
+<h2 id="with-authorization-create-graphql-server-authorization">With Authorization create-graphql-server-authorization</h2><p><strong>OPTIONAL:</strong>
+If you are using create-graphql-server-authorization as well, you have to create additional files:</p>
+<p>Add &quot;generate/model/templates/default/authorize_default.template&quot;:</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">/* eslint-disable prettier */
+import {
+  queryForRoles,
+  onAuthRegisterLoader,
+  authlog,
+  checkAuthDoc
+} from &apos;create-graphql-server-authorization&apos;;
+
+export default class {{TypeName}} {
+  constructor(context) {
+    this.context = context;
+    this.collection = context.db.collection(&apos;{{typeName}}&apos;);
+    this.pubsub = context.pubsub;
+    const { me, {{User}} } = context;
+    queryForRoles(
+      me,
+      {{{userRoles.readOne}}},
+      {{{docRoles.readOne}}},
+      { {{User}} },
+      onAuthRegisterLoader(&apos;{{typeName}} findOneById&apos;, &apos;readOne&apos;, me, this)
+    );
+  }
+
+  async findOneById(id, me, resolver) {
+    const log = authlog(resolver, &apos;readOne&apos;, me);
+    if (!this.authorizedLoader) {
+      log.error(&apos;not authorized&apos;);
+      return null;
+    }
+    return await this.authorizedLoader.load(id);
+  }
+
+  find(args, me, resolver) {
+    const { baseQuery, sortQuery, skip, limit} = this.context.prepareQueries( args );
+    const authQuery = queryForRoles(
+      me,
+      {{{userRoles.readMany}}},
+      {{{docRoles.readMany}}},
+      { {{User}}: this.context.{{User}} },
+      authlog(resolver, &apos;readMany&apos;, me)
+    );
+    const finalQuery = { ...baseQuery, ...authQuery };
+    this.context.log.debug(`\n\n${resolver} DB-Query:\n\n`, JSON.stringify(finalQuery, null, 2), &apos;\nsort:&apos;, sortQuery,&apos;\nskip:&apos;, skip, &apos;\nlimit:&apos;, limit, &apos;\n&apos;,&apos;\n&apos;);
+    return this.collection
+      .find(finalQuery)
+      .sort(sortQuery)
+      .skip(skip)
+      .limit(limit)
+      .toArray();
+  }
+{{#each singularFields}}
+{{&gt; defaultSingularField }}
+{{/each}}
+{{#each paginatedFields}}
+{{&gt; defaultPaginatedField }}
+{{/each}}
+
+  createdBy({{typeName}}, me, resolver) {
+    return this.context.{{User}}.findOneById({{typeName}}.createdById, me, resolver);
+  }
+
+  updatedBy({{typeName}}, me, resolver) {
+    return this.context.{{User}}.findOneById({{typeName}}.updatedById, me, resolver);
+  }
+
+  async insert(doc, me, resolver) {
+    const docToInsert = Object.assign({}, doc, {
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
+      createdById: (me &amp;&amp; me._id) ? me._id : &apos;unknown&apos;,
+      updatedById: (me &amp;&amp; me._id) ? me._id : &apos;unknown&apos;,
+    });
+    checkAuthDoc(
+      docToInsert,
+      me,
+      {{{userRoles.create}}},
+      {{{docRoles.create}}},
+      { {{User}}: this.context.{{User}} },
+      authlog(resolver, &apos;create&apos;, me)
+    );
+    const id = (await this.collection.insertOne(docToInsert)).insertedId;
+    if (!id) {
+      throw new Error(`insert {{typeName}} not possible.`);
+    }
+    this.context.log.debug(`inserted {{typeName}} ${id}.`);
+    const insertedDoc = this.findOneById(id, me, &apos;pubsub {{typeName}}Inserted&apos;);
+    this.pubsub.publish(&apos;{{typeName}}Inserted&apos;, insertedDoc);
+    return insertedDoc;
+  }
+
+  async updateById(id, doc, me, resolver) {
+    const docToUpdate = {
+      $set: Object.assign({}, doc, {
+        updatedAt: Date.now(),
+        updatedById: me &amp;&amp; me._id ? me._id : &apos;unknown&apos;
+      })
+    };
+    const baseQuery = { _id: id };
+    const authQuery = queryForRoles(
+      me,
+      {{{userRoles.update}}},
+      {{{docRoles.update}}},
+      { {{User}}: this.context.{{User}} },
+      authlog(resolver, &apos;update&apos;, me)
+    );
+    const finalQuery = { ...baseQuery, ...authQuery };
+    const result = await this.collection.updateOne(finalQuery, docToUpdate);
+    if (result.result.ok !== 1 || result.result.n !== 1) {
+      throw new Error(`update {{typeName}} not possible for ${id}.`);
+    }
+    this.context.log.debug(`updated {{typeName}} ${id}.`);
+    this.authorizedLoader.clear(id);
+    const updatedDoc = this.findOneById(id, me, &apos;pubsub {{typeName}}Updated&apos;);
+    this.pubsub.publish(&apos;{{typeName}}Updated&apos;, updatedDoc);
+    return updatedDoc;
+  }
+
+  async removeById(id, me, resolver) {
+    const baseQuery = { _id: id };
+    const authQuery = queryForRoles(
+      me,
+      {{{userRoles.delete}}},
+      {{{docRoles.delete}}},
+      { {{User}}: this.context.{{User}} },
+      authlog(resolver, &apos;delete&apos;, me)
+    );
+    const finalQuery = { ...baseQuery, ...authQuery };
+    const result = await this.collection.remove(finalQuery);
+    if (result.result.ok !== 1 || result.result.n !== 1) {
+      throw new Error(`remove {{typeName}} not possible for ${id}.`);
+    }
+    this.context.log.debug(`removed {{typeName}} ${id}.`);
+    this.authorizedLoader.clear(id);
+    this.pubsub.publish(&apos;{{typeName}}Removed&apos;, id);
+    return result;
+  }
+}</code>
+</code></pre>
+<p>Adjust &quot;generate/model/templates/user/authorize_user.template&quot;:</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">/* eslint-disable prettier */
+import {
+  queryForRoles,
+  onAuthRegisterLoader,
+  authlog,
+  checkAuthDoc,
+  protectFields
+} from &apos;create-graphql-server-authorization&apos;;
+import bcrypt from &apos;bcrypt&apos;;
+const SALT_ROUNDS = 10;
+
+export default class {{TypeName}} {
+  constructor(context) {
+    this.context = context;
+    this.collection = context.db.collection(&apos;{{typeName}}&apos;);
+    this.pubsub = context.pubsub;
+    this.authRole = {{User}}.authRole;
+    const { me } = context;
+    queryForRoles(
+      me,
+      {{{userRoles.readOne}}},
+      {{{docRoles.readOne}}},
+      { {{User}} },
+      onAuthRegisterLoader(&apos;{{typeName}} findOneById&apos;, &apos;readOne&apos;, me, this)
+    );
+  }
+
+  static authRole({{typeName}}) {
+    return {{typeName}} &amp;&amp; {{typeName}}.{{roleField}} ? {{typeName}}.{{roleField}} : null;
+  }
+
+  async findOneById(id, me, resolver) {
+    const log = authlog(resolver, &apos;readOne&apos;, me);
+    if (!this.authorizedLoader) {
+      log.error(&apos;not authorized&apos;);
+      return null;
+    }
+    return await this.authorizedLoader.load(id);
+  }
+
+  find(args, me, resolver) {
+    const { baseQuery, sortQuery, skip, limit} = this.context.prepareQueries( args );
+    const authQuery = queryForRoles(
+      me,
+      {{{userRoles.readMany}}},
+      {{{docRoles.readMany}}},
+      { {{User}}: this.context.{{User}} },
+      authlog(resolver, &apos;readMany&apos;, me)
+    );
+    const finalQuery = { ...baseQuery, ...authQuery };
+    this.context.log.debug(`\n\n${resolver} DB-Query:\n\n`, JSON.stringify(finalQuery, null, 2), &apos;\nsort:&apos;, sortQuery,&apos;\nskip:&apos;, skip, &apos;\nlimit:&apos;, limit, &apos;\n&apos;,&apos;\n&apos;);
+    return this.collection
+      .find(finalQuery)
+      .sort(sortQuery)
+      .skip(skip)
+      .limit(limit)
+      .toArray();
+  }
+{{#each singularFields}}
+{{&gt; defaultSingularField }}
+{{/each}}
+{{#each paginatedFields}}
+{{&gt; defaultPaginatedField }}
+{{/each}}
+
+  createdBy({{typeName}}, me, resolver) {
+    return this.context.{{User}}.findOneById({{typeName}}.createdById, me, resolver);
+  }
+
+  updatedBy({{typeName}}, me, resolver) {
+    return this.context.{{User}}.findOneById({{typeName}}.updatedById, me, resolver);
+  }
+
+  async insert(doc, me, resolver) {
+    // We don&apos;t want to store passwords in plaintext
+    const { password, ...rest } = doc;
+    const hash = await bcrypt.hash(password, SALT_ROUNDS);
+    let docToInsert = Object.assign({}, rest, {
+      hash,
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
+      createdById: me &amp;&amp; me._id ? me._id : &apos;unknown&apos;,
+      updatedById: me &amp;&amp; me._id ? me._id : &apos;unknown&apos;
+    });
+    checkAuthDoc(
+      docToInsert,
+      me,
+      {{{userRoles.create}}},
+      {{{docRoles.create}}},
+      { {{User}}: this.context.{{User}} },
+      authlog(resolver, &apos;create&apos;, me)
+    );
+    docToInsert = protectFields(me, [{{#if firstUserRole}}&apos;{{firstUserRole}}&apos;{{/if}}], [{{#if roleField}}&apos;{{roleField}}&apos;{{/if}}], docToInsert, {
+      {{User}}: this.context.{{User}}
+    });
+    const id = (await this.collection.insertOne(docToInsert)).insertedId;
+    if (!id) {
+      throw new Error(`insert {{typeName}} not possible.`);
+    }
+    this.context.log.debug(`inserted {{typeName}} ${id}.`);
+    const insertedDoc = this.findOneById(id, me, &apos;pubsub {{typeName}}Inserted&apos;);
+    this.pubsub.publish(&apos;{{typeName}}Inserted&apos;, insertedDoc);
+    return insertedDoc;
+  }
+
+  async updateById(id, doc, me, resolver) {
+    const docToUpdate = {
+      $set: Object.assign({}, doc, {
+        updatedAt: Date.now(),
+        updatedById: me &amp;&amp; me._id ? me._id : &apos;unknown&apos;
+      })
+    };
+    const baseQuery = { _id: id };
+    const authQuery = queryForRoles(
+      me,
+      {{{userRoles.update}}},
+      {{{docRoles.update}}},
+      { {{User}}: this.context.{{User}} },
+      authlog(resolver, &apos;update&apos;, me)
+    );
+    docToUpdate.$set = protectFields(
+      me,
+      [{{#if firstUserRole}}&apos;{{firstUserRole}}&apos;{{/if}}],
+      [{{#if roleField}}&apos;{{roleField}}&apos;{{/if}}],
+      docToUpdate.$set,
+      { {{User}}: this.context.{{User}} }
+    );
+    const finalQuery = { ...baseQuery, ...authQuery };
+    const result = await this.collection.updateOne(finalQuery, docToUpdate);
+    if (result.result.ok !== 1 || result.result.n !== 1) {
+      throw new Error(`update {{typeName}} not possible for ${id}.`);
+    }
+    this.context.log.debug(`updated {{typeName}} ${id}.`);
+    this.authorizedLoader.clear(id);
+    const updatedDoc = this.findOneById(id, me, &apos;pubsub {{typeName}}Updated&apos;);
+    this.pubsub.publish(&apos;{{typeName}}Updated&apos;, updatedDoc);
+    return updatedDoc;
+  }
+
+  async removeById(id, me, resolver) {
+    const baseQuery = { _id: id };
+    const authQuery = queryForRoles(
+      me,
+      {{{userRoles.delete}}},
+      {{{docRoles.delete}}},
+      { {{User}}: this.context.{{User}} },
+      authlog(resolver, &apos;delete&apos;, me)
+    );
+    const finalQuery = { ...baseQuery, ...authQuery };
+    const result = await this.collection.remove(finalQuery);
+    if (result.result.ok !== 1 || result.result.n !== 1) {
+      throw new Error(`remove {{typeName}} not possible for ${id}.`);
+    }
+    this.context.log.debug(`removed {{typeName}} ${id}.`);
+    this.authorizedLoader.clear(id);
+    this.pubsub.publish(&apos;{{typeName}}Removed&apos;, id);
+    return result;
+  }
+}</code>
+</code></pre>
+<p>Add &quot;generate/resolvers/templates/default/authorize_default.template&quot;:</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">/* eslint-disable prettier */
+/* eslint comma-dangle: [2, &quot;only-multiline&quot;] */
+const resolvers = {
+  {{TypeName}}: {
+    id({{typeName}}) {
+      return {{typeName}}._id;
+    },
+{{#each singularFields}}
+{{&gt; defaultSingularField }}
+{{/each}}
+{{#each paginatedFields}}
+{{&gt; defaultPaginatedField }}
+{{/each}}
+
+    createdBy({{typeName}}, args, { {{TypeName}}, me }) {
+      return {{TypeName}}.createdBy({{typeName}}, me, &apos;{{typeName}} createdBy&apos;);
+    },
+
+    updatedBy({{typeName}}, args, { {{TypeName}}, me }) {
+      return {{TypeName}}.updatedBy({{typeName}}, me, &apos;{{typeName}} updatedBy&apos;);
+    }
+  },
+  Query: {
+    {{typeName}}s(root, args, { {{TypeName}}, me }) {
+      return {{TypeName}}.find(args, me, &apos;{{typeName}}s&apos;);
+    },
+
+    {{typeName}}(root, { id }, { {{TypeName}}, me }) {
+      return {{TypeName}}.findOneById(id, me, &apos;{{typeName}}&apos;);
+    }
+  },
+  Mutation: {
+    async create{{TypeName}}(root, { input }, { {{TypeName}}, me }) {
+      return await {{TypeName}}.insert(input, me, &apos;create{{TypeName}}&apos;);
+    },
+
+    async update{{TypeName}}(root, { id, input }, { {{TypeName}}, me }) {
+      return await {{TypeName}}.updateById(id, input, me, &apos;update{{TypeName}}&apos;);
+    },
+
+    async remove{{TypeName}}(root, { id }, { {{TypeName}}, me }) {
+      return await {{TypeName}}.removeById(id, me, &apos;remove{{TypeName}}&apos;);
+    }
+  },
+  Subscription: {
+    {{typeName}}Created: {{typeName}} =&gt; {{typeName}},
+    {{typeName}}Updated: {{typeName}} =&gt; {{typeName}},
+    {{typeName}}Removed: id =&gt; id
+  }
+};
+
+export default resolvers;</code>
+</code></pre>
+<h3 id="installation-part-6-----for-test-runs">Installation Part 6 --- For test runs</h3><p>The &quot;test/output-app&quot; expects now also different schema files, as we added these additional query arguments. So they have to be also in the test app, otherwise our tests will fail. You don&apos;t have to do this manually. In create-graphql-server &quot;bin/gentest.js&quot; we have command line command, which is generating all the required files as test files in a temp directory, and if you are using sublime it will show them in sublime. Run it with...</p>
+<pre><code class="lang-bash"><code class="source-code prettyprint">yarn gentest              # defaults to test/input/User.graphql AND:
+yarn gentest test/input/Tweet.graphql</code>
+</code></pre>
+<p>With that you get also all schema files generated as they should look like with the new extended &quot;enhanceSchemaWithQueryArguments&quot; logic. </p>
+<p>Copy the generated <em>.graphql files and overwrite the files in &quot;test/output-app/schema/</em>.graphql&quot;.
+Copy the generated <em>.model.js files and overwrite the files in &quot;test/output-app/model/</em>.js&quot;
+Copy the generated *.resolver.js files and overwrite the files in &quot;test/output-app/resolvers&quot;</p>
+<h3 id="finally">Finally</h3><p>If you have succeeded an all the following test runs are ok, you did well. Congratulations!</p>
+<pre><code class="lang-bash"><code class="source-code prettyprint">yarn end-to-end-test
+yarn output-app-generation-test
+yarn test-add-update-remove</code>
+</code></pre>
+<p>If you are having troubles somewhere, have a look into the running example at:
+<a href="https://github.com/tobkle/create-graphql-server/tree/Authorization+Arguments">tobkle/create-graphql-server branch: Authorization+Arguments</a></p>
 <h2 id="documentation">Documentation</h2><p><a href="https://tobkle.github.io/create-graphql-server-query-arguments/">API Documentation</a></p>
 <h2 id="tests">Tests</h2><pre><code class="lang-bash"><code class="source-code prettyprint">yarn test</code>
 </code></pre>
 <h2 id="contributing">Contributing</h2><p>In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.</p>
-<h1 id="example-queries">Example Queries</h1><pre><code class="lang-javascript"><code class="source-code prettyprint"></code>
-</code></pre>
-<p>Have a look in the test directory to see more:
+<h1 id="example-queries">Example Queries</h1><p>Have a look in the test directory to see more:
 <a href="https://github.com/tobkle/create-graphql-server-query-arguments/tree/master/src/__tests__/end-to-end/">index-test-cases</a></p>
 </div>
 </div>
