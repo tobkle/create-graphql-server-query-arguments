@@ -17,3 +17,7 @@ export { prepareQueries } from './model';
 // provides a string with required types
 // clones a given inputSchema and enhance it with query arguments
 export { buildRequiredTypes, enhanceSchemaWithQueryArguments } from './schema';
+
+// to provide the testCases to be used in create-graphql-server
+export { testCases } from './test-cases';
+export { suite } from './index-test-cases';

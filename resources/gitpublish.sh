@@ -19,6 +19,7 @@ node -e "var package = require('./package.json'); \
 cp README.md npm/
 cp LICENSE npm/
 cp -r docs npm/
+cp src/schema/requiredTypes.graphql npm/schema/
 cp src/schema/requiredTypes.conf npm/schema/
 
 cd npm

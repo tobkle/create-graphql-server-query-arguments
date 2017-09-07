@@ -5,7 +5,7 @@ import { describe, before, it, Test } from 'mocha';
 import { expect } from 'chai';
 
 // dynamically define the test cases based on our test case registry
-const suite = describe('end-to-end test', () => {
+export const suite = describe('end-to-end test', () => {
   before(done => {
     testCases.forEach(testCase => {
       suite.addTest(

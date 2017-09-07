@@ -24,5 +24,23 @@ export function buildBaseQuery(args: any): any {
     query = merge(query, buildFilterQuery(args.filter));
   }
 
+  // for pagination
+  // default
+  let lastCreatedAt = 0;
+
+  // if there was sent a lastCreatedAt with the args, then use that instead
+  if (
+    args.lastCreatedAt &&
+    (args.lastCreatedAt !== '' && typeof args.lastCreatedAt !== 'object')
+  ) {
+    lastCreatedAt = args.lastCreatedAt;
+  }
+
+  // check if the user entered a different filter criteria for "createdAt"
+  // if so, take the one from the user, otherwise use the default for pagination
+  if (!query['createdAt']) {
+    query['createdAt'] = { $gt: lastCreatedAt };
+  }
+
   return query;
 }

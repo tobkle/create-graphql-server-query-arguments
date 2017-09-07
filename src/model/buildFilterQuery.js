@@ -10,11 +10,6 @@ import isObject from 'lodash.isobject';
 export function buildFilterQuery(args: any): any {
   const query = {};
 
-  // on no argument return empty query
-  // if (!args) {
-  //   return query;
-  // }
-
   // on primitive types, just return the data as leaf values in the recursion
   switch (typeof args) {
     case 'boolean':
