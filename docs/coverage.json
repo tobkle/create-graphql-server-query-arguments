@@ -1,7 +1,7 @@
 {
-  "coverage": "57.14%",
-  "expectCount": 70,
-  "actualCount": 40,
+  "coverage": "57.74%",
+  "expectCount": 71,
+  "actualCount": 41,
   "files": {
     "src/constants.js": {
       "expectCount": 20,
@@ -77,8 +77,8 @@
       "undocumentLines": []
     },
     "src/schema/enhanceSchemaWithQueryArguments.js": {
-      "expectCount": 10,
-      "actualCount": 10,
+      "expectCount": 11,
+      "actualCount": 11,
       "undocumentLines": []
     },
     "src/schema/requiredTypes.js": {

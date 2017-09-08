@@ -91,6 +91,9 @@ export function enhanceSchemaWithQueryArguments(inputSchema: any): any {
     // add the newly created types to the Query itself,
     // to make them accessable by users
     addQueryArguments(enhancedSchema, queryArguments);
+
+    // add query arguments to other paginated fields
+    addPaginatedFieldsArguments(enhancedSchema);
   }
 
   return enhancedSchema;
@@ -275,6 +278,51 @@ function addQueryArguments(enhancedSchema, queryArguments) {
               // add "orderBy" query argument
               args.push(buildArgument('orderBy', queryArgument.orderByName));
             }
+          });
+      }
+    });
+}
+
+/**
+ * adds the query arguments "filter" and "orderBy" to the type paginated fields
+ * @private
+ * @param {object} enhancedSchema - AST document definition, to be enhanced
+ * @param {array} queryArguments - dictionary of queryArguments to be added
+ */
+
+function addPaginatedFieldsArguments(enhancedSchema) {
+  // add the arguments to other paginated fields
+  // e.g.: tweets(filter: TweetFilter, orderBy: [TweetOrderBy!])
+  enhancedSchema.definitions
+    .filter(def => def.kind === OBJECT_TYPE_DEFINITION)
+    .forEach(definition => {
+      const { fields, name } = definition;
+
+      if (fields && name) {
+        // find the right fields
+        fields
+          // only in field definition, which are a list, such as 'users'
+          .filter(
+            field =>
+              field.type.kind === LIST_TYPE && field.kind === FIELD_DEFINITION
+          )
+          .forEach(field => {
+            // get its target type
+            const targetType = field.type.type.name.value;
+            const filterName = `${targetType}Filter`;
+            const orderByName = `[${targetType}OrderBy!]`;
+
+            // as arguments is a reserved field, we need to rename to args
+            const args = field.arguments;
+
+            // add "skip" query argument
+            args.push(buildArgument('skip', 'Int'));
+
+            // add "filter" query argument
+            args.push(buildArgument('filter', filterName));
+
+            // add "orderBy" query argument
+            args.push(buildArgument('orderBy', orderByName));
           });
       }
     });

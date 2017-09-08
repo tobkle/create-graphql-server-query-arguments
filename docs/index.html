@@ -94,10 +94,13 @@
 
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><p><a href="http://badge.fury.io/js/create-graphql-server-query-arguments"><img src="https://badge.fury.io/js/create-graphql-server-query-arguments.svg" alt="npm version"></a> <a href="https://travis-ci.org/tobkle/create-graphql-server-query-arguments"><img src="https://travis-ci.org/tobkle/create-graphql-server-query-arguments.svg?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/github/tobkle/create-graphql-server-query-arguments?branch=master"><img src="https://coveralls.io/repos/github/tobkle/create-graphql-server-query-arguments/badge.svg?branch=master" alt="Coverage Status"></a></p>
 <h1 id="create-graphql-server-query-arguments">create-graphql-server-query-arguments</h1><p>Build query arguments for filter and orderBy MongoDB queries.</p>
-<p>Added 61 test cases, which pass against my local server.
-TODO: There can be more test cases, with complex queries and a critical review of the tests.
-TODO: test app to run those test cases against. Used so far my local server.
-TODO: When server is up and running: rename src/<strong>tests</strong>/end-to-end/index-test-cases.js back to index-test-cases-test.js, in order to have it in the test run with Mocha.</p>
+<p>Added 60 test cases, which pass against my local create-graphql-server instance.
+These tests are referenced in create-graphql-server test runs later.</p>
+<p>TODO:</p>
+<ul>
+<li>There can be more test cases, with complex queries and a critical review of the tests. Add them to (src/index-test-cases.js).</li>
+<li>Implement a test app within the package, to run these test cases against. Used so far my local server to test with. </li>
+</ul>
 <h2 id="purpose">Purpose</h2><p>You build a GraphQL server with the npm package &quot;create-graphql-server&quot;, which serves as a backend to web applications. This &quot;create-graphql-server&quot; generates schemas, resolvers and models for an express-js server.</p>
 <p>As soon as you are building the web application on top of this server, you want to access this backend server with specific GraphQL queries. Sometimes you want to set filters, to get just filtered records. Sometimes you want to sort data by different fields in ascending or descending order. Sometimes you want just pages of data with the first ten data records, or just the second page after the first ten records and so on.</p>
 <p>In order to enable such accesses to your GraphQL server backend, the schema needs to provide query arguments such as: </p>
@@ -706,9 +709,12 @@ yarn test-add-update-remove</code>
 <h2 id="documentation">Documentation</h2><p><a href="https://tobkle.github.io/create-graphql-server-query-arguments/">API Documentation</a></p>
 <h2 id="tests">Tests</h2><pre><code class="lang-bash"><code class="source-code prettyprint">yarn test</code>
 </code></pre>
+<p>Or in create-graphql-server package itself:</p>
+<pre><code class="lang-bash"><code class="source-code prettyprint">yarn end-to-end-arguments-test</code>
+</code></pre>
 <h2 id="contributing">Contributing</h2><p>In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.</p>
 <h1 id="example-queries">Example Queries</h1><p>Have a look in the test directory to see more:
-<a href="https://github.com/tobkle/create-graphql-server-query-arguments/tree/master/src/__tests__/end-to-end/">index-test-cases</a></p>
+<a href="https://github.com/tobkle/create-graphql-server-query-arguments/tree/master/src/index-test-cases.js">index-test-cases</a></p>
 </div>
 </div>
 

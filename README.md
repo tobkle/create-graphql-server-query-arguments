@@ -4,10 +4,12 @@
 
 Build query arguments for filter and orderBy MongoDB queries.
 
-Added 61 test cases, which pass against my local server.
-TODO: There can be more test cases, with complex queries and a critical review of the tests.
-TODO: test app to run those test cases against. Used so far my local server.
-TODO: When server is up and running: rename src/__tests__/end-to-end/index-test-cases.js back to index-test-cases-test.js, in order to have it in the test run with Mocha.
+Added 60 test cases, which pass against my local create-graphql-server instance.
+These tests are referenced in create-graphql-server test runs later.
+
+TODO:
+* There can be more test cases, with complex queries and a critical review of the tests. Add them to (src/index-test-cases.js).
+* Implement a test app within the package, to run these test cases against. Used so far my local server to test with. 
 
 ## Purpose
 You build a GraphQL server with the npm package "create-graphql-server", which serves as a backend to web applications. This "create-graphql-server" generates schemas, resolvers and models for an express-js server.
@@ -697,10 +699,14 @@ If you are having troubles somewhere, have a look into the running example at:
 ## Documentation
 [API Documentation](https://tobkle.github.io/create-graphql-server-query-arguments/)
 
-
 ## Tests
 ```bash
 yarn test
+```
+
+Or in create-graphql-server package itself:
+```bash
+yarn end-to-end-arguments-test
 ```
 
 ## Contributing
@@ -709,4 +715,4 @@ In lieu of a formal style guide, take care to maintain the existing coding style
 # Example Queries
 
 Have a look in the test directory to see more:
-[index-test-cases](https://github.com/tobkle/create-graphql-server-query-arguments/tree/master/src/__tests__/end-to-end/)
+[index-test-cases](https://github.com/tobkle/create-graphql-server-query-arguments/tree/master/src/index-test-cases.js)

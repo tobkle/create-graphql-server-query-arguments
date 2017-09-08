@@ -1,9 +1,9 @@
 type Tweet {
   id: ObjID!
   author: User
-  coauthors(lastCreatedAt: Float, limit: Int): [User]
+  coauthors(lastCreatedAt: Float, limit: Int, skip: Int, filter: UserFilter, orderBy: [UserOrderBy!]): [User]
   body: String
-  likers(lastCreatedAt: Float, limit: Int): [User]
+  likers(lastCreatedAt: Float, limit: Int, skip: Int, filter: UserFilter, orderBy: [UserOrderBy!]): [User]
   createdBy: User
   updatedBy: User
   createdAt: Float!
