@@ -1,0 +1,129 @@
+{
+  "coverage": "57.74%",
+  "expectCount": 71,
+  "actualCount": 41,
+  "files": {
+    "src/constants.js": {
+      "expectCount": 20,
+      "actualCount": 0,
+      "undocumentLines": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    "src/index-test-cases.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        8
+      ]
+    },
+    "src/index.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/model/buildBaseQuery.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/model/buildFilterQuery.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/model/buildLimit.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/model/buildSkip.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/model/buildSortQuery.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/model/prepareQueries.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/schema/buildRequiredTypes.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/schema/enhanceSchemaWithQueryArguments.js": {
+      "expectCount": 11,
+      "actualCount": 11,
+      "undocumentLines": []
+    },
+    "src/schema/requiredTypes.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/sendQuery.js": {
+      "expectCount": 8,
+      "actualCount": 3,
+      "undocumentLines": [
+        6,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "src/test-cases.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        11
+      ]
+    },
+    "src/util/capitalization.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/util/graphql.js": {
+      "expectCount": 15,
+      "actualCount": 14,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "src/util/read.js": {
+      "expectCount": 4,
+      "actualCount": 3,
+      "undocumentLines": [
+        26
+      ]
+    }
+  }
+}

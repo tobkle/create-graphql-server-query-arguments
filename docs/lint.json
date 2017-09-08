@@ -1,0 +1,73 @@
+[
+  {
+    "name": "addPaginatedFieldsArguments",
+    "filePath": "src/schema/enhanceSchemaWithQueryArguments.js",
+    "lines": [
+      {
+        "lineNumber": 285,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 286,
+        "line": " * adds the query arguments \"filter\" and \"orderBy\" to the type paginated fields"
+      },
+      {
+        "lineNumber": 287,
+        "line": " * @private"
+      },
+      {
+        "lineNumber": 288,
+        "line": " * @param {object} enhancedSchema - AST document definition, to be enhanced"
+      },
+      {
+        "lineNumber": 289,
+        "line": " * @param {array} queryArguments - dictionary of queryArguments to be added"
+      },
+      {
+        "lineNumber": 290,
+        "line": " */"
+      },
+      {
+        "lineNumber": 291,
+        "line": ""
+      },
+      {
+        "lineNumber": 292,
+        "line": "function addPaginatedFieldsArguments(enhancedSchema) {"
+      }
+    ],
+    "codeParams": [
+      "enhancedSchema"
+    ],
+    "docParams": [
+      "enhancedSchema",
+      "queryArguments"
+    ]
+  },
+  {
+    "name": "getToken",
+    "filePath": "src/sendQuery.js",
+    "lines": [
+      {
+        "lineNumber": 11,
+        "line": "export const adminUser = '583291a1638566b3c5a92ca1'; // role = 'admin'"
+      },
+      {
+        "lineNumber": 12,
+        "line": ""
+      },
+      {
+        "lineNumber": 13,
+        "line": "export function getToken("
+      }
+    ],
+    "codeParams": [
+      "userId",
+      "KEY"
+    ],
+    "docParams": [
+      "userId",
+      "undefined"
+    ]
+  }
+]
